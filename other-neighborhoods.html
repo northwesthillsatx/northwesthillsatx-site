@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Austin Neighborhoods - Know Your Rights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e4080 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: #1e4080;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c5aa0;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: #1e4080;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        
+        .alert {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .alert-info {
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            border-left-color: #17a2b8;
+            color: #0c5460;
+        }
+        
+        .alert-danger {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            border-left-color: #dc3545;
+            color: #721c24;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .contact-card h4 {
+            color: #2c5aa0;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card .role {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card .contact-info {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .legal-text {
+            background-color: #e8f4f8;
+            border-left: 4px solid #2c5aa0;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2c5aa0;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1e4080;
+        }
+        
+        .district-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .district-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .district-card:hover {
+            border-color: #2c5aa0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44,90,160,0.2);
+        }
+        
+        .district-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .representative-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1e4080;
+            margin-bottom: 0.5rem;
+        }
+        
+        .district-areas {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .contact-details {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .contact-details a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+        
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        
+        .mayor-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 3px solid #2c5aa0;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        
+        .mayor-card h4 {
+            color: #2c5aa0;
+            font-size: 1.5rem;
+        }
+        
+        .mayor-card .district-number {
+            color: #1e4080;
+        }
+        
+        .mayor-card .representative-name {
+            color: #1e4080;
+        }
+        
+        .mayor-card .contact-details a {
+            color: #2c5aa0;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.2rem 0;
+            }
+            
+            .contact-grid,
+            .district-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mayor-card {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Austin Neighborhoods</h1>
+            <p>Know Your Rights - Protect All Our Communities</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Northwest Hills</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#rights">Your Rights</a></li>
+                <li><a href="#representatives">Representatives</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#action">Take Action</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="overview">
+            <h2>The Problem Extends Throughout Austin</h2>
+            
+            <div class="alert alert-info">
+                <strong>This is not just a Northwest Hills problem.</strong> Illegal commercial event venues are operating in residential neighborhoods throughout Austin, violating the same laws and creating the same problems for families across our city.
+            </div>
+            
+            <p>Residents in neighborhoods across Austin are experiencing:</p>
+            <ul>
+                <li><strong>Residential properties operating as commercial event venues</strong> without proper permits</li>
+                <li><strong>Regular large parties</strong> that exceed residential capacity and noise limits</li>
+                <li><strong>Traffic and parking problems</strong> from commercial-scale events</li>
+                <li><strong>Safety concerns</strong> from constant streams of strangers</li>
+                <li><strong>Property value impacts</strong> from living near undisclosed commercial operations</li>
+            </ul>
+            
+            <br>
+            
+            <h3>Northwest Hills as a Case Study</h3>
+            <p>The <a href="index.html">Northwest Hills case</a> provides a detailed example of how to identify, document, and address these violations. The same legal principles, enforcement mechanisms, and strategies apply to neighborhoods throughout Austin.</p>
+            
+            <div class="alert">
+                <strong>Universal Applicability:</strong> The Austin City Code, noise ordinances, zoning laws, and enforcement mechanisms described on this site apply city-wide. Use your local representatives and resources, but the legal framework is the same.
+            </div>
+        </section>
+        
+        <section id="rights">
+            <h2>Your Rights (City-Wide)</h2>
+            
+            <h3>Austin Noise Ordinance Rights</h3>
+            <p>Austin Code of Ordinances <a href="https://library.municode.com/tx/austin/codes/code_of_ordinances/469236?nodeId=TIT9PRAC_CH9-2NOAMSO_ART1GEPR_S9-2-5REUSSOEQREAR" target="_blank">Title 9, Chapter 9-2</a> protects ALL residential areas:</p>
+            <div class="legal-text">
+                "A person may not use sound equipment audible beyond the property line of a residence in a residential area that produces sound in excess of 75 decibels."
+            </div>
+            
+            <h3>Zoning Rights (City-Wide)</h3>
+            <p>Residential properties throughout Austin cannot legally operate as commercial event venues under <a href="https://www.austintexas.gov/sites/default/files/files/Planning/zoning_guide.pdf" target="_blank">Austin zoning laws</a>. Commercial activities require:</p>
+            <ul>
+                <li>Proper commercial zoning designation</li>
+                <li>Business licenses and permits</li>
+                <li>Commercial property tax rates</li>
+                <li><a href="https://www.austintexas.gov/department/short-term-rentals" target="_blank">Hotel occupancy tax collection</a></li>
+            </ul>
+            
+            <h3>Deed Restrictions (Varies by Neighborhood)</h3>
+            <p>Most Austin neighborhoods have deed restrictions that prohibit commercial use. Research your specific deed restrictions through:</p>
+            <ul>
+                <li><strong>Your HOA or neighborhood association</strong></li>
+                <li><strong>Travis County Clerk records</strong> (property deed documents)</li>
+                <li><strong>Your title company</strong> (from when you purchased)</li>
+                <li><strong>Property management companies</strong> in your area</li>
+            </ul>
+        </section>
+        
+        <section id="representatives">
+            <h2>Austin City Council Representatives</h2>
+            
+            <div class="alert">
+                <strong>Find Your District:</strong> Not sure which district you're in? Use the <a href="https://maps.austintexas.gov/GIS/CouncilDistrictMap/" target="_blank">Austin Council District Map</a> to find your representative.
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://maps.austintexas.gov/GIS/CouncilDistrictMap/" target="_blank" style="display: inline-block; transition: transform 0.2s;">
+                    <img src="assets/map.png" alt="Austin City Council District Map" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor: pointer;">
+                </a>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic;">Austin City Council Districts - Click the map for an interactive version</p>
+            </div>
+            
+            <div class="district-grid">
+                <div class="district-card mayor-card">
+                    <div class="district-number">Mayor</div>
+                    <div class="representative-name">Kirk Watson</div>
+                    <div class="district-areas">City-wide leadership</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:mayor@austintexas.gov">mayor@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2100<br>
+                        <strong>Purpose:</strong> City-wide policy, enforcement coordination
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 1</div>
+                    <div class="representative-name">Natasha Harper-Madison</div>
+                    <div class="district-areas">East Austin, MLK area</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district1@austintexas.gov">district1@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2101<br>
+                        <strong>Office Hours:</strong> By appointment
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 2</div>
+                    <div class="representative-name">Vanessa Fuentes</div>
+                    <div class="district-areas">South Austin, Travis Heights</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district2@austintexas.gov">district2@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2102<br>
+                        <strong>Note:</strong> <strong>Mayor Pro Tem</strong> - Leading STR reforms
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 3</div>
+                    <div class="representative-name">José Velásquez</div>
+                    <div class="district-areas">East and South Austin</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district3@austintexas.gov">district3@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2103<br>
+                        <strong>Note:</strong> Strong supporter of community advocacy
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 4</div>
+                    <div class="representative-name">José "Chito" Vela</div>
+                    <div class="district-areas">North Austin</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district4@austintexas.gov">district4@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2104<br>
+                        <strong>Note:</strong> Focus on practical enforcement tools
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 5</div>
+                    <div class="representative-name">Krista Laine</div>
+                    <div class="district-areas">Central Austin, Hyde Park</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district5@austintexas.gov">district5@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2105<br>
+                        <strong>Note:</strong> New council member as of 2025
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 6</div>
+                    <div class="representative-name">Ryan Alter</div>
+                    <div class="district-areas">West Austin, Zilker</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district6@austintexas.gov">district6@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2106<br>
+                        <strong>Note:</strong> Practical enforcement advocate
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 7</div>
+                    <div class="representative-name">Mike Siegel</div>
+                    <div class="district-areas">North Austin, Crestview, Allandale</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district7@austintexas.gov">district7@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2107<br>
+                        <strong>Note:</strong> New council member as of 2025
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 8</div>
+                    <div class="representative-name">Paige Ellis</div>
+                    <div class="district-areas">Southwest Austin, Barton Creek, Oak Hill</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district8@austintexas.gov">district8@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2108<br>
+                        <strong>Note:</strong> Community safety advocate
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 9</div>
+                    <div class="representative-name">Zohaib "Zo" Qadri</div>
+                    <div class="district-areas">Central Austin, Downtown, UT area</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district9@austintexas.gov">district9@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2109<br>
+                        <strong>Note:</strong> Technology and enforcement innovation
+                    </div>
+                </div>
+                
+                <div class="district-card">
+                    <div class="district-number">District 10</div>
+                    <div class="representative-name">Marc Duchen</div>
+                    <div class="district-areas">Northwest Hills, Great Hills</div>
+                    <div class="contact-details">
+                        <strong>Email:</strong> <a href="mailto:district10@austintexas.gov">district10@austintexas.gov</a><br>
+                        <strong>Phone:</strong> 512-978-2110<br>
+                        <strong>Note:</strong> Residential neighborhood protection
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resources">
+            <h2>Additional Resources</h2>
+            
+            <h3>City-Wide Enforcement Contacts</h3>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Austin Code Compliance</h4>
+                    <div class="role">Zoning & Business Licensing Violations</div>
+                    <div class="contact-info">
+                        <strong>Phone:</strong> 512-974-9144<br>
+                        <strong>311:</strong> Call 3-1-1 or use <a href="https://www.austintexas.gov/services/report-code-violation" target="_blank">Austin 311 app</a><br>
+                        <strong>Purpose:</strong> Report commercial use in residential zone
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>STR Licensing</h4>
+                    <div class="role">Short-Term Rental Enforcement</div>
+                    <div class="contact-info">
+                        <strong>Email:</strong> <a href="mailto:STRLicensing@austintexas.gov">STRLicensing@austintexas.gov</a><br>
+                        <strong>Purpose:</strong> Report unlicensed STR operations
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>APD Non-Emergency</h4>
+                    <div class="role">Noise Complaints & Community Issues</div>
+                    <div class="contact-info">
+                        <strong>Phone:</strong> 512-974-5000<br>
+                        <strong>Purpose:</strong> Noise violations, disturbance calls
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h4>Austin Fire Marshal</h4>
+                    <div class="role">Assembly Occupancy Violations</div>
+                    <div class="contact-info">
+                        <strong>Phone:</strong> 512-974-0130<br>
+                        <strong>Purpose:</strong> Large gatherings exceeding residential safety limits
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Finding Your Neighborhood Resources</h3>
+            <ul>
+                <li><strong>Neighborhood Associations:</strong> Search "<strong>[Your Neighborhood] HOA</strong>" or "<strong>[Your Neighborhood] Civic Association</strong>"</li>
+                <li><strong>Deed Restrictions:</strong> Check your property deed or contact your title company</li>
+                <li><strong>Local Groups:</strong> Many neighborhoods have Facebook groups or NextDoor communities</li>
+                <li><strong>Austin Neighborhoods Council:</strong> <a href="http://www.ancweb.org/" target="_blank">ancweb.org</a> - City-wide neighborhood advocacy</li>
+            </ul>
+            
+            <h3>Investigation Platforms</h3>
+            <p>Check these platforms to see if properties in your neighborhood are listed as commercial event venues:</p>
+            <ul>
+                <li><a href="https://www.peerspace.com" target="_blank">Peerspace</a> - Event and meeting spaces</li>
+                <li><a href="https://swimply.com" target="_blank">Swimply</a> - Pool rentals</li>
+                <li><a href="https://giggster.com" target="_blank">Giggster</a> - Film and photo locations</li>
+                <li><a href="https://eventup.com" target="_blank">Eventup</a> - Party venues</li>
+                <li><a href="https://www.splacer.co" target="_blank">Splacer</a> - Event spaces</li>
+            </ul>
+        </section>
+        
+        <section id="action">
+            <h2>Take Action in Your Neighborhood</h2>
+            
+            <h3>Step 1: Document the Problem</h3>
+            <div class="alert">
+                <strong>Evidence is Key:</strong> Take photos, videos, and notes of violations. Record dates, times, and noise levels when possible.
+            </div>
+            <ul>
+                <li>Search rental platforms for your address and neighboring properties</li>
+                <li>Document party sizes, frequency, and commercial equipment</li>
+                <li>Record noise levels (download a decibel meter app)</li>
+                <li>Note parking and traffic impacts</li>
+                <li>Screenshot online listings and customer reviews</li>
+            </ul>
+            
+            <h3>Step 2: Contact Your Representatives</h3>
+            <ul>
+                <li><strong>Your Council Member:</strong> Use the district information above</li>
+                <li><strong>Mayor Pro Tem Vanessa Fuentes:</strong> Leading STR reform efforts</li>
+                <li><strong>Your local neighborhood association</strong></li>
+            </ul>
+            
+            <h3>Step 3: File Official Complaints</h3>
+            <ul>
+                <li><strong>Zoning violations:</strong> Call Code Compliance at 512-974-9144</li>
+                <li><strong>STR violations:</strong> Email STRLicensing@austintexas.gov</li>
+                <li><strong>Noise violations:</strong> Call APD non-emergency 512-974-5000</li>
+                <li><strong>Business licensing:</strong> Use Austin 311 app or call 3-1-1</li>
+            </ul>
+            
+            <h3>Step 4: Know Your Legal Options</h3>
+            <ul>
+                <li><strong>Deed restrictions:</strong> Private enforcement rights (varies by neighborhood)</li>
+                <li><strong>Nuisance law:</strong> Legal remedies for ongoing disturbances</li>
+                <li><strong>Property rights:</strong> Protection from commercial intrusion</li>
+            </ul>
+            
+            <div class="alert alert-danger">
+                <strong>Universal Problem:</strong> This issue affects neighborhoods throughout Austin. By documenting and reporting violations in your area, you're helping build the case for city-wide enforcement improvements.
+            </div>
+            
+            <h3>Sample Email Template</h3>
+            <div class="legal-text">
+                <strong>Subject:</strong> Urgent: Illegal Commercial Event Venue Operating in [Your District] Residential Neighborhood<br><br>
+                
+                Dear Council Member [Name],<br><br>
+                
+                I am writing as your constituent in [Your Neighborhood] to request immediate city enforcement action against an illegal commercial event venue operating at [PROPERTY ADDRESS]. This residential property is violating multiple city ordinances while destroying the quiet, family-friendly character of our neighborhood.<br><br>
+                
+                <strong>The violations include:</strong><br>
+                • Commercial zoning violation - operating event venue in residential zone<br>
+                • Noise ordinance violations - exceeding 75dB residential limit<br>
+                • Operating without business licenses or permits<br>
+                • [Include deed restriction violations if applicable]<br><br>
+                
+                This property regularly hosts large commercial parties, generating excessive traffic that overwhelms our residential streets. My family deserves to enjoy our home without constant commercial disruption.<br><br>
+                
+                <strong>I am requesting immediate action:</strong><br>
+                1. Code Compliance investigation and citation for zoning violations<br>
+                2. STR enforcement coordination to shut down unlicensed operations<br>
+                3. Enforcement of noise ordinances with appropriate penalties<br><br>
+                
+                I look forward to your prompt response and action.<br><br>
+                
+                Respectfully,<br>
+                [YOUR NAME]<br>
+                [YOUR ADDRESS]<br>
+                [YOUR PHONE NUMBER]
+            </div>
+        </section>
+        
+        <section>
+            <h2>Connect With Us</h2>
+            <p>We are Austin residents working to protect residential neighborhoods throughout our city. This problem isn't unique to Northwest Hills - it's happening in communities across Austin.</p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="mailto:northwesthillsatx@gmail.com" class="btn">Share Your Experience</a>
+                <a href="index.html" class="btn">Northwest Hills Case Study</a>
+            </div>
+            
+            <div class="alert alert-info">
+                <strong>Building a City-Wide Movement:</strong> By sharing information and strategies across neighborhoods, we can more effectively advocate for consistent enforcement and protection of residential areas throughout Austin.
+            </div>
+            
+            <p style="text-align: center; color: #666; font-style: italic;">
+                Together we can preserve the residential character of neighborhoods throughout Austin.
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Austin Residents. Know Your Rights - Protect All Our Neighborhoods.</p>
+            <p>For educational purposes. Not legal advice. Consult attorneys for legal guidance.</p>
+        </div>
+    </footer>
+</body>
+</html>
