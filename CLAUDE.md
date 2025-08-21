@@ -74,3 +74,26 @@ This is a **GitHub Pages site** with custom domain:
 - **Enforcement channels**: City departments, representatives, community resources
 - **Documentation guidance**: How to investigate and document violations
 - **Action templates**: Sample emails and complaint procedures
+
+## SEO and Discoverability
+
+### Search Engine Optimization
+- **Meta tags**: Comprehensive title, description, keywords, and author tags
+- **Open Graph**: Facebook/LinkedIn sharing optimization with custom images
+- **Twitter Cards**: Enhanced Twitter sharing with large image cards
+- **Structured data**: JSON-LD markup for better search engine understanding
+- **Canonical URLs**: Prevent duplicate content issues
+- **Sitemap.xml**: Help search engines discover and index pages
+- **Robots.txt**: Guide search engine crawlers appropriately
+
+### Internal Linking Strategy
+- **Cross-page navigation**: Strategic links between index.html and other-neighborhoods.html
+- **Section anchors**: Deep linking to specific content areas
+- **Related content**: Contextual links to relevant sections
+- **Footer navigation**: Quick access to key pages and sections
+
+### Discoverability Features
+- **Keyword optimization**: Target phrases like "Austin illegal event venues," "residential zoning violations," "Peerspace Swimply violations"
+- **Local SEO**: Austin-specific content with neighborhood and district targeting
+- **Long-tail keywords**: Specific phrases residents might search for
+- **Social media optimization**: Enhanced sharing appearance on all platforms

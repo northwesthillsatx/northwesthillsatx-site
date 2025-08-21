@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://northwesthillsatx.com/sitemap.xml
+
+# Block access to git files and other unnecessary files
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: *.md
