@@ -125,6 +125,45 @@
             font-size: 1.15rem;
         }
 
+        .quick-start-card .btn {
+            margin: 1rem 0 0 0;
+        }
+
+        .quick-start-card .quick-start-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 56px;
+            padding: 0.95rem 1.1rem;
+            border: 2px solid #1e4080;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #fff7d6 0%, #ffe9a8 100%);
+            color: #1e4080;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 1.35;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(30, 64, 128, 0.12);
+        }
+
+        .quick-start-card .quick-start-cta:hover {
+            background: linear-gradient(135deg, #fff1bf 0%, #ffe08b 100%);
+            color: #163364;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 14px 24px rgba(30, 64, 128, 0.16);
+        }
+
+        .quick-start-card .quick-start-cta:visited {
+            color: #1e4080;
+        }
+
+        .quick-start-card .quick-start-cta:focus-visible {
+            outline: 3px solid rgba(243, 156, 18, 0.45);
+            outline-offset: 3px;
+        }
+
         .step-label {
             display: inline-block;
             background: #2c5aa0;
@@ -164,22 +203,38 @@
             overflow: hidden;
         }
 
-        .collapsible-section summary {
+        .collapsible-section > summary {
             list-style: none;
             cursor: pointer;
             padding: 1.5rem 2rem;
-            font-size: 1.4rem;
-            font-weight: bold;
             color: #2c5aa0;
             border-bottom: 1px solid #e9ecef;
             position: relative;
         }
 
-        .collapsible-section summary::-webkit-details-marker {
+        .collapsible-summary-title {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            line-height: 1.25;
+            padding-right: 2.5rem;
+        }
+
+        .collapsible-summary-brief {
+            display: block;
+            margin-top: 0.55rem;
+            padding-right: 3rem;
+            font-size: 0.98rem;
+            font-weight: normal;
+            line-height: 1.5;
+            color: #4a5568;
+        }
+
+        .collapsible-section > summary::-webkit-details-marker {
             display: none;
         }
 
-        .collapsible-section summary::after {
+        .collapsible-section > summary::after {
             content: '+';
             position: absolute;
             right: 2rem;
@@ -190,7 +245,7 @@
             color: #2c5aa0;
         }
 
-        .collapsible-section[open] summary::after {
+        .collapsible-section[open] > summary::after {
             content: '−';
         }
 
@@ -677,6 +732,7 @@
                     <h3>Contact Eric Gardner First</h3>
                     <p>If a residential property has shown a pattern of event venue business that has affected your home life, email <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> now.</p>
                     <p>Use this as the general entry point to explain how the activity has affected you through parking, traffic, noise, event scale, or safety concerns. This should not be limited to one specific event.</p>
+                    <a href="mailto:eric.gardner@austintexas.gov?subject=Residential%20event%20venue%20business%20impacting%20neighborhood%20-%20%5BPROPERTY%20ADDRESS%5D&amp;body=Hello%20Mr.%20Gardner%2C%0D%0A%0D%0AI%20am%20writing%20to%20report%20what%20appears%20to%20be%20an%20event%20venue%20business%20operating%20from%20a%20residential%20property%20at%20%5BPROPERTY%20ADDRESS%5D%20that%20has%20been%20affecting%20my%20household%20and%20neighborhood%20over%20time.%0D%0A%0D%0AThe%20recurring%20impacts%20have%20included%20%5BNOISE%5D%2C%20%5BTRAFFIC%5D%2C%20%5BPARKING%5D%2C%20%5BEVENT%20SCALE%5D%2C%20and%20%5BSAFETY%20CONCERNS%5D.%0D%0A%0D%0AI%20wanted%20to%20make%20sure%20this%20issue%20is%20on%20your%20radar%20because%20it%20appears%20to%20involve%20an%20ongoing%20pattern%20of%20commercial%20event%20activity%20in%20a%20residential%20area%2C%20not%20just%20a%20single%20isolated%20incident.%0D%0A%0D%0AMy%20name%20is%20%5BYOUR%20NAME%5D%2C%20and%20I%20live%20at%20%5BYOUR%20ADDRESS%20OR%20NEARBY%20LOCATION%5D.%0D%0A%0D%0AThank%20you%20for%20your%20attention.%0D%0A%0D%0A%5BYOUR%20NAME%5D" class="btn quick-start-cta">Open an email template for Eric Gardner</a>
                 </div>
 
                 <div class="quick-start-card">
@@ -692,17 +748,19 @@
                     <h3>For Each Major Event: File 311, Then Follow Up</h3>
                     <p>On a per-event basis, open an Austin 311 service request using:</p>
                     <p><strong>Request Code Officer → Land Use Violation(s) → Running a Business out of a Residence</strong></p>
+                    <p>In the ticket, describe the issue as a residential property being used like a home business or event venue operation impacting neighborhood noise, traffic, parking, and safety. Avoid leading with rental-style language.</p>
                     <p>Then follow up with Eric Gardner and include the 311 service request number if available.</p>
                     <p><a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Open the Austin 311 service request form</a></p>
+                    <a href="mailto:eric.gardner@austintexas.gov?subject=Follow-up%20on%20event-related%20land-use%20concerns%20-%20%5BPROPERTY%20ADDRESS%5D&amp;body=Hello%20Mr.%20Gardner%2C%0D%0A%0D%0AI%20am%20following%20up%20regarding%20what%20appears%20to%20be%20an%20event%20venue%20business%20operating%20from%20the%20residential%20property%20at%20%5BPROPERTY%20ADDRESS%5D.%0D%0A%0D%0AFor%20the%20event%20on%20%5BDATE%20OR%20TIMEFRAME%5D%2C%20I%20submitted%20an%20Austin%20311%20service%20request%20under%20land-use%20violation%20reporting.%20The%20311%20service%20request%20number%20is%20%5B311%20SERVICE%20REQUEST%20NUMBER%5D.%0D%0A%0D%0AThe%20event%20caused%20the%20following%20impacts%3A%20%5BNOISE%5D%2C%20%5BTRAFFIC%5D%2C%20%5BPARKING%5D%2C%20%5BEVENT%20SCALE%5D%2C%20and%20%5BSAFETY%20CONCERNS%5D.%0D%0A%0D%0AI%20am%20sending%20this%20follow-up%20so%20this%20event-specific%20incident%20can%20be%20connected%20to%20the%20broader%20pattern%20of%20commercial%20event%20activity%20affecting%20the%20neighborhood.%0D%0A%0D%0AThank%20you%20for%20your%20attention.%0D%0A%0D%0A%5BYOUR%20NAME%5D%0D%0A%5BYOUR%20ADDRESS%20OR%20NEARBY%20LOCATION%5D" class="btn quick-start-cta">Open an email template for event follow-up with Eric Gardner</a>
                 </div>
             </div>
         </section>
         <details id="problem-details" class="collapsible-section">
-            <summary>The Problem</summary>
+            <summary>
+                <span class="collapsible-summary-title">The Problem</span>
+                <span class="collapsible-summary-brief">Residential event venues affect neighbors through noise, parking, traffic, crowd size, and safety concerns. Expand to read more.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> Residential event venues affect neighbors through noise, parking, traffic, crowd size, and safety concerns. Expand this section if you want the fuller explanation of how these operations disrupt neighborhood life.
-                </div>
 
             <h2>The Problem: Commercial Event Venues in Our Residential Neighborhood</h2>
             
@@ -770,17 +828,17 @@
             </ul>
             
             <div class="alert">
-                <strong>Investigate Your Concerns:</strong> If you suspect a neighbor is operating a commercial venue, check platforms like <strong>Peerspace</strong>, <strong>Swimply</strong>, <strong>Giggster</strong>, and <strong>Eventup</strong> to see if their property is listed for commercial bookings. Learn more about <a href="#evidence">recognizing commercial operations</a> and <a href="#action">taking action</a>.
+                <strong>Investigate Your Concerns:</strong> If you suspect a neighbor is operating a commercial venue, check platforms like <a href="https://www.peerspace.com" target="_blank">Peerspace</a>, <a href="https://swimply.com" target="_blank">Swimply</a>, <a href="https://giggster.com" target="_blank">Giggster</a>, and <a href="https://eventup.com" target="_blank">Eventup</a> to see if their property is listed for commercial bookings. Learn more about <a href="#evidence">recognizing commercial operations</a> and <a href="#action">taking action</a>.
             </div>
             </div>
         </details>
 
         <details id="reporting-details" class="collapsible-section">
-            <summary>Reporting Details</summary>
+            <summary>
+                <span class="collapsible-summary-title">Reporting Details</span>
+                <span class="collapsible-summary-brief">Contact Eric Gardner first if the venue has been affecting you over time. Then, for each major event, file a 311 land-use report and follow up with him. Expand to take action.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> Contact Eric Gardner first if the venue has been affecting you over time. Then, for each major event, file a 311 land-use report and follow up with him.
-                </div>
 
                 <div class="steps-box">
                     <h3>1. Start by contacting Eric Gardner</h3>
@@ -794,9 +852,17 @@
                         <li>safety concerns caused by crowd size, unfamiliar visitors, or impaired street access.</li>
                     </ul>
                     <div class="legal-text">
-                        <strong>Suggested subject line:</strong> Residential event venue business impacting neighborhood – [PROPERTY ADDRESS]<br><br>
-                        <strong>Suggested opening:</strong> “I am writing to report what appears to be an event venue business operating from a residential property that has been affecting my household and neighborhood over time. I want to make sure this issue is on your radar because of the repeated impacts involving noise, traffic, parking, event scale, and safety concerns.”
+                        <strong>Suggested subject line:</strong> Residential event venue business impacting neighborhood - [PROPERTY ADDRESS]<br><br>
+                        <strong>Suggested body:</strong><br>
+                        Hello Mr. Gardner,<br><br>
+                        I am writing to report what appears to be an event venue business operating from a residential property at [PROPERTY ADDRESS] that has been affecting my household and neighborhood over time.<br><br>
+                        The recurring impacts have included [NOISE], [TRAFFIC], [PARKING], [EVENT SCALE], and [SAFETY CONCERNS].<br><br>
+                        I wanted to make sure this issue is on your radar because it appears to involve an ongoing pattern of commercial event activity in a residential area, not just a single isolated incident.<br><br>
+                        My name is [YOUR NAME], and I live at [YOUR ADDRESS OR NEARBY LOCATION].<br><br>
+                        Thank you for your attention.<br><br>
+                        [YOUR NAME]
                     </div>
+                    <a href="mailto:eric.gardner@austintexas.gov?subject=Residential%20event%20venue%20business%20impacting%20neighborhood%20-%20%5BPROPERTY%20ADDRESS%5D&amp;body=Hello%20Mr.%20Gardner%2C%0D%0A%0D%0AI%20am%20writing%20to%20report%20what%20appears%20to%20be%20an%20event%20venue%20business%20operating%20from%20a%20residential%20property%20at%20%5BPROPERTY%20ADDRESS%5D%20that%20has%20been%20affecting%20my%20household%20and%20neighborhood%20over%20time.%0D%0A%0D%0AThe%20recurring%20impacts%20have%20included%20%5BNOISE%5D%2C%20%5BTRAFFIC%5D%2C%20%5BPARKING%5D%2C%20%5BEVENT%20SCALE%5D%2C%20and%20%5BSAFETY%20CONCERNS%5D.%0D%0A%0D%0AI%20wanted%20to%20make%20sure%20this%20issue%20is%20on%20your%20radar%20because%20it%20appears%20to%20involve%20an%20ongoing%20pattern%20of%20commercial%20event%20activity%20in%20a%20residential%20area%2C%20not%20just%20a%20single%20isolated%20incident.%0D%0A%0D%0AMy%20name%20is%20%5BYOUR%20NAME%5D%2C%20and%20I%20live%20at%20%5BYOUR%20ADDRESS%20OR%20NEARBY%20LOCATION%5D.%0D%0A%0D%0AThank%20you%20for%20your%20attention.%0D%0A%0D%0A%5BYOUR%20NAME%5D" class="btn quick-start-cta">Open an email template for Eric Gardner</a>
                 </div>
 
                 <div class="steps-box">
@@ -823,6 +889,19 @@
                     <h3>3. Follow up with Eric Gardner after each major event</h3>
                     <p>After opening the 311 ticket, follow up with <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> and include the 311 service request number if available.</p>
                     <p>This helps connect your broader pattern-of-impact email with event-specific reports and documentation.</p>
+                    <div class="legal-text">
+                        <strong>Suggested subject line:</strong> Follow-up on event-related land-use concerns - [PROPERTY ADDRESS]<br><br>
+                        <strong>Suggested body:</strong><br>
+                        Hello Mr. Gardner,<br><br>
+                        I am following up regarding what appears to be an event venue business operating from the residential property at [PROPERTY ADDRESS].<br><br>
+                        For the event on [DATE OR TIMEFRAME], I submitted an Austin 311 service request under land-use violation reporting. The 311 service request number is [311 SERVICE REQUEST NUMBER].<br><br>
+                        The event caused the following impacts: [NOISE], [TRAFFIC], [PARKING], [EVENT SCALE], and [SAFETY CONCERNS].<br><br>
+                        I am sending this follow-up so this event-specific incident can be connected to the broader pattern of commercial event activity affecting the neighborhood.<br><br>
+                        Thank you for your attention.<br><br>
+                        [YOUR NAME]<br>
+                        [YOUR ADDRESS OR NEARBY LOCATION]
+                    </div>
+                    <a href="mailto:eric.gardner@austintexas.gov?subject=Follow-up%20on%20event-related%20land-use%20concerns%20-%20%5BPROPERTY%20ADDRESS%5D&amp;body=Hello%20Mr.%20Gardner%2C%0D%0A%0D%0AI%20am%20following%20up%20regarding%20what%20appears%20to%20be%20an%20event%20venue%20business%20operating%20from%20the%20residential%20property%20at%20%5BPROPERTY%20ADDRESS%5D.%0D%0A%0D%0AFor%20the%20event%20on%20%5BDATE%20OR%20TIMEFRAME%5D%2C%20I%20submitted%20an%20Austin%20311%20service%20request%20under%20land-use%20violation%20reporting.%20The%20311%20service%20request%20number%20is%20%5B311%20SERVICE%20REQUEST%20NUMBER%5D.%0D%0A%0D%0AThe%20event%20caused%20the%20following%20impacts%3A%20%5BNOISE%5D%2C%20%5BTRAFFIC%5D%2C%20%5BPARKING%5D%2C%20%5BEVENT%20SCALE%5D%2C%20and%20%5BSAFETY%20CONCERNS%5D.%0D%0A%0D%0AI%20am%20sending%20this%20follow-up%20so%20this%20event-specific%20incident%20can%20be%20connected%20to%20the%20broader%20pattern%20of%20commercial%20event%20activity%20affecting%20the%20neighborhood.%0D%0A%0D%0AThank%20you%20for%20your%20attention.%0D%0A%0D%0A%5BYOUR%20NAME%5D%0D%0A%5BYOUR%20ADDRESS%20OR%20NEARBY%20LOCATION%5D" class="btn quick-start-cta">Open an email template for event follow-up with Eric Gardner</a>
                 </div>
 
                 <div class="alert">
@@ -832,11 +911,11 @@
         </details>
         
         <details id="legal-background" class="collapsible-section">
-            <summary>Your Rights</summary>
+            <summary>
+                <span class="collapsible-summary-title">Your Rights</span>
+                <span class="collapsible-summary-brief">Residents have protections under noise rules, deed restrictions, and zoning laws. Expand to read more.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> Residents have protections under noise rules, deed restrictions, and zoning laws. Expand this section for the detailed background and source links.
-                </div>
             <h2>Your Rights as a Resident</h2>
             
             <div class="alert">
@@ -874,11 +953,11 @@
         </details>
         
         <details class="collapsible-section">
-            <summary>Legal Violations</summary>
+            <summary>
+                <span class="collapsible-summary-title">Legal Violations</span>
+                <span class="collapsible-summary-brief">These properties may violate home occupation rules, noise restrictions, deed restrictions, and other land-use requirements. Expand to read more.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> These properties may violate home occupation rules, noise restrictions, deed restrictions, and other land-use requirements. Expand for the full legal background.
-                </div>
             <h2>Legal Violations</h2>
             
             <h3>City Code Violations</h3>
@@ -929,11 +1008,11 @@
         </details>
         
         <details id="evidence-details" class="collapsible-section">
-            <summary>Recognizing Commercial Operations</summary>
+            <summary>
+                <span class="collapsible-summary-title">Recognizing Commercial Operations</span>
+                <span class="collapsible-summary-brief">Event venue activity often leaves visible clues such as large gatherings, professional equipment, overflow parking, and online marketing. Expand to read more.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> Event venue activity often leaves visible clues such as large gatherings, professional equipment, overflow parking, and online marketing. Expand for the examples and investigation tips.
-                </div>
             <h2>Recognizing Commercial Operations</h2>
             
             <p>Commercial event venues operating in residential areas often share similar characteristics:</p>
@@ -971,11 +1050,11 @@
         </details>
         
         <details id="faq-details" class="collapsible-section">
-            <summary>Frequently Asked Questions</summary>
+            <summary>
+                <span class="collapsible-summary-title">Frequently Asked Questions</span>
+                <span class="collapsible-summary-brief">The FAQ is still here, but each question is optional reading so the page is easier to scan. Expand to read more.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> The FAQ is still here, but each question is now optional reading so the page is easier to scan.
-                </div>
 
                 <details class="faq-item">
                     <summary>1. Why are these “event venues” a commercial operation and not a short-term rental?</summary>
@@ -1323,11 +1402,11 @@
         </details>
         
         <details id="contacts-details" class="collapsible-section">
-            <summary>Who To Contact</summary>
+            <summary>
+                <span class="collapsible-summary-title">Who To Contact</span>
+                <span class="collapsible-summary-brief">Eric Gardner comes first for the broad neighborhood impact. Austin 311 is then used on a per-event basis. Expand to take action.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> Eric Gardner comes first for the broad neighborhood impact. Austin 311 is then used on a per-event basis. Expand for the full contact list.
-                </div>
             <p>Start with <strong>Eric Gardner</strong> if the residential event venue has been affecting your household over time. Then use <strong>Austin 311</strong> on a per-event basis and follow up with him. The remaining contacts can still be useful, but they are generally secondary.</p>
             
             <div class="contact-grid">
@@ -1387,39 +1466,20 @@
         </details>
         
         <details class="collapsible-section">
-            <summary>Additional Action Guidance</summary>
+            <summary>
+                <span class="collapsible-summary-title">Additional Action Guidance</span>
+                <span class="collapsible-summary-brief">Essential first steps are at the top of the page, but there's still more you can do. Expand to take action.</span>
+            </summary>
             <div class="collapsible-content">
-                <div class="section-intro">
-                    <strong>In short:</strong> The essential first steps are already shown at the top of the page. Expand this section if you want more detailed action guidance and sample language.
-                </div>
             <div class="priority-box">
-                <h3>Action Order</h3>
-                <ol>
-                    <li>Contact Eric Gardner first if the event venue has been affecting your household over time.</li>
-                    <li>For each major disruptive event, file an Austin 311 service request.</li>
-                    <li>Follow up with Eric Gardner and include the 311 service request number if available.</li>
-                </ol>
-                <p>Additional outreach to neighborhood groups, police, or elected officials can still help, but these are the core reporting steps.</p>
+                <p>After your initial steps in <a href="#reporting-details">Reporting Details</a>, here are other actions you can take to keep building the record and seeking support.</p>
             </div>
-            
-            <h3>Immediate Steps You Can Take</h3>
             
             <div class="alert">
                 <strong>Document Everything:</strong> Take photos, videos, and notes of violations. Record dates, times, and noise levels when possible.
             </div>
             
-            <h4>1. File Official Complaints</h4>
-            <ol>
-                <li><strong>Contact Eric Gardner first:</strong> Email <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> if the property has shown a pattern of event venue business that has affected your household or neighborhood over time.</li>
-                <li><strong>Open a 311 ticket for each major event:</strong> Use <a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Austin’s service request form</a> and select “Request Code Officer” → “Land Use Violation(s)” → “Running a Business out of a Residence.”</li>
-                <li><strong>Describe the activity as an event venue business:</strong> Include concerns about noise, traffic, parking, scale, and safety. Avoid STR-style wording such as “rental” so the complaint stays focused on land use.</li>
-                <li><strong>Upload photos:</strong> Add any supporting images that show traffic, parking, crowd size, event equipment, or other impacts.</li>
-                <li><strong>Follow up with Eric Gardner:</strong> Send the same core information after the event and include the 311 service request number if available.</li>
-            </ol>
-            
-            <br>
-            
-            <h4>2. Contact Your Representatives</h4>
+            <h4>1. Contact Your Representatives</h4>
             <ul>
                 <li><strong>Neighborhood advocacy:</strong> Email NWACA <a href="mailto:info@nwaca.org">info@nwaca.org</a></li>
                 <li><strong>City policy support:</strong> Contact <a href="mailto:district10@austintexas.gov">District 10</a> and <a href="mailto:district2@austintexas.gov">Mayor Pro Tem</a> offices after you have begun building a record through 311 and code enforcement</li>
@@ -1428,7 +1488,7 @@
             
             <br>
             
-            <h4>3. Know Your Legal Options</h4>
+            <h4>2. Know Your Legal Options</h4>
             <ul>
                 <li><strong>Deed restrictions:</strong> Private enforcement rights with attorney fee recovery</li>
                 <li><strong>Property rights:</strong> Protection from commercial intrusion</li>
@@ -1476,6 +1536,7 @@
                 [YOUR ADDRESS]<br>
                 [YOUR PHONE NUMBER]
             </div>
+            <a href="mailto:district10@austintexas.gov?subject=Urgent%3A%20Illegal%20Commercial%20Event%20Venue%20Operating%20in%20District%2010%20Residential%20Neighborhood&amp;body=Dear%20Council%20Member%20Duchen%2C%0D%0A%0D%0AI%20am%20writing%20as%20your%20constituent%20in%20Northwest%20Hills%20regarding%20what%20appears%20to%20be%20an%20illegal%20commercial%20event%20venue%20operating%20at%20%5BPROPERTY%20ADDRESS%5D.%20I%20have%20reported%20the%20matter%20to%20Austin%20Code%20Supervisor%20Eric%20Gardner%20because%20this%20activity%20has%20been%20affecting%20my%20household%20and%20neighborhood%20over%20time%2C%20and%20I%20have%20also%20used%20Austin%20311%20to%20document%20major%20disruptive%20events.%20This%20residential%20property%20appears%20to%20be%20operating%20in%20violation%20of%20multiple%20city%20ordinances%20while%20undermining%20the%20quiet%2C%20family-friendly%20character%20of%20our%20neighborhood.%0D%0A%0D%0AThe%20violations%20are%20clear%20and%20documented%3A%0D%0A%E2%80%A2%20Land-use%20violation%20-%20operating%20an%20event%20venue%20business%20from%20a%20residence%0D%0A%E2%80%A2%20Noise%20ordinance%20violations%20-%20professional%20sound%20equipment%20exceeding%2075dB%20residential%20limit%0D%0A%E2%80%A2%20Ongoing%20event%20activity%20causing%20neighborhood%20impacts%20related%20to%20noise%2C%20traffic%2C%20parking%2C%20scale%2C%20and%20safety%0D%0A%E2%80%A2%20Deed%20restriction%20violations%20prohibiting%20commercial%20use%0D%0A%0D%0AThis%20property%20regularly%20hosts%2040-70%20person%20commercial%20parties%2C%20generating%20excessive%20vehicle%20trips%20that%20overwhelm%20our%20residential%20streets.%20My%20family%20cannot%20enjoy%20our%20backyard%20due%20to%20constant%20noise%2C%20and%20we%20have%20concerns%20about%20safety%20with%20large%20numbers%20of%20unfamiliar%20visitors%20regularly%20entering%20our%20neighborhood.%0D%0A%0D%0AI%20am%20requesting%20immediate%20action%3A%0D%0A1.%20Continued%20Code%20Compliance%20investigation%20and%20enforcement%20for%20land-use%20violations%0D%0A2.%20Coordination%20across%20city%20departments%20as%20needed%20to%20address%20repeated%20event%20activity%20at%20this%20residence%0D%0A3.%20Support%20for%20consistent%20enforcement%20when%20these%20events%20create%20ongoing%20neighborhood%20impacts%0D%0A%0D%0AWe%20chose%20Northwest%20Hills%20for%20its%20residential%20character%2C%20and%20we%20expect%20our%20city's%20laws%20to%20be%20enforced%20consistently.%20Commercial%20event%20venues%20belong%20in%20properly%20zoned%20commercial%20districts%2C%20not%20residential%20neighborhoods.%20I%20look%20forward%20to%20your%20prompt%20response%20and%20action%20on%20this%20matter.%0D%0A%0D%0ARespectfully%2C%0D%0A%5BYOUR%20NAME%5D%0D%0A%5BYOUR%20ADDRESS%5D%0D%0A%5BYOUR%20PHONE%20NUMBER%5D" class="btn quick-start-cta">Open an email template for Council Member Marc Duchen</a>
             
             <div class="alert">
                 <strong>Stay Safe:</strong> Use official channels rather than direct confrontation. Document everything and work through proper enforcement mechanisms.
