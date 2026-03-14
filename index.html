@@ -75,30 +75,6 @@
             background-color: #f8f9fa;
         }
 
-        .notice-banner {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
-            border-bottom: 2px solid #e0a800;
-            color: #664d03;
-            padding: 1rem 0;
-        }
-        
-        .notice-banner .container {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .notice-banner strong {
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        
-        .notice-banner a {
-            color: #664d03;
-            font-weight: bold;
-        }
 
         .meeting-notice-box {
             background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
@@ -118,6 +94,158 @@
         .meeting-notice-box a {
             color: #664d03;
             font-weight: bold;
+        }
+
+        .quick-start-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .quick-start-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .quick-start-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-top: 4px solid #2c5aa0;
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .quick-start-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        .step-label {
+            display: inline-block;
+            background: #2c5aa0;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.04em;
+            border-radius: 999px;
+            padding: 0.25rem 0.6rem;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            width: 100%;
+            background: none;
+            border: 1px solid rgba(255,255,255,0.35);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .mobile-nav-toggle:hover {
+            background-color: rgba(255,255,255,0.12);
+        }
+
+        .collapsible-section {
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: white;
+            overflow: hidden;
+        }
+
+        .collapsible-section summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1.5rem 2rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c5aa0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+        }
+
+        .collapsible-section summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .collapsible-section summary::after {
+            content: '+';
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.6rem;
+            line-height: 1;
+            color: #2c5aa0;
+        }
+
+        .collapsible-section[open] summary::after {
+            content: '−';
+        }
+
+        .collapsible-content {
+            padding: 2rem;
+        }
+
+        .section-intro {
+            background: #eef6ff;
+            border: 1px solid #b6d4fe;
+            border-left: 4px solid #2c5aa0;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin: 1rem 0;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1rem 1.25rem;
+            font-weight: bold;
+            color: #1e4080;
+            position: relative;
+            border-bottom: none;
+            font-size: 1.05rem;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            right: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: #2c5aa0;
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem 1.25rem 1.25rem;
         }
         
         .priority-box {
@@ -458,12 +586,9 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-            .notice-banner .container {
-                flex-direction: column;
-            }
             .logo {
-                width: 110px;
-                height: 110px;
+                width: 80px;
+                height: 80px;
             }
             
             .header-text {
@@ -473,16 +598,35 @@
             header h1 {
                 font-size: 2rem;
             }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
+
+            header {
+                padding: 1.25rem 0;
             }
-            
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 0.75rem;
+            }
+
+            nav ul.nav-open {
+                display: flex;
+            }
+
             nav li {
                 margin: 0.2rem 0;
             }
-            
+
+            nav a {
+                display: block;
+                text-align: left;
+            }
+
             .contact-grid,
             .evidence-gallery,
             .stats {
@@ -506,28 +650,60 @@
     
     <nav>
         <div class="container">
-            <ul>
-                <li><a href="#problem" class="current-page">The Problem</a></li>
-                <li><a href="#rights">Your Rights</a></li>
-                <li><a href="#reporting">Top Reporting Steps</a></li>
-                <li><a href="#laws">Legal Violations</a></li>
-                <li><a href="#evidence">Evidence</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacts">Who To Contact</a></li>
-                <li><a href="#action">Take Action</a></li>
+            <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">☰ Menu</button>
+            <ul id="primary-nav">
+                <li><a href="#quick-start" class="current-page">Start Here</a></li>
+                <li><a href="#problem-details">The Problem</a></li>
+                <li><a href="#legal-background">Legal Background</a></li>
+                <li><a href="#evidence-details">Evidence</a></li>
+                <li><a href="#faq-details">FAQ</a></li>
+                <li><a href="#contacts-details">Contacts</a></li>
                 <li><a href="other-neighborhoods.html">Other Neighborhoods</a></li>
             </ul>
         </div>
     </nav>
     
     <main class="container">
-        <div class="meeting-notice-box">
-            <strong>Neighborhood Notice: NWACA Annual Neighborhood Meeting — Wednesday, March 25, 2026</strong>
-            Visit tables from 6:00–6:30 p.m. and again from 7:30–8:00 p.m., and hear speakers from 6:30–7:30 p.m. at St. Matthew’s Episcopal Church, Huffman Hall. Big parking lot at 4121 Steck Avenue. This is a good opportunity to raise concerns directly with Council Member Marc Duchen and speak with City of Austin departments, including code enforcement.
-            <br><br>
-            <a href="https://nwaca.org/portfolio-view/nwaca-annual-neighborhood-meeting-3-25-26/" target="_blank">View meeting details</a>
-        </div>
-        <section id="problem">
+        <section id="quick-start" class="quick-start-section">
+            <h2>Start Here</h2>
+            <div class="alert alert-danger">
+                <strong>First priority:</strong> If a residential event venue has been affecting you, contact Austin Code Supervisor Eric Gardner now so the issue is on the City’s radar even before the next event occurs.
+            </div>
+            <p>This page starts with the three most important steps. Further reading is available below if you want more background, legal detail, or FAQs.</p>
+
+            <div class="quick-start-grid">
+                <div class="quick-start-card">
+                    <span class="step-label">Step 1</span>
+                    <h3>Contact Eric Gardner First</h3>
+                    <p>If a residential property has shown a pattern of event venue business that has affected your home life, email <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> now.</p>
+                    <p>Use this as the general entry point to explain how the activity has affected you through parking, traffic, noise, event scale, or safety concerns. This should not be limited to one specific event.</p>
+                </div>
+
+                <div class="quick-start-card">
+                    <span class="step-label">Step 2</span>
+                    <h3>Attend the NWACA Neighborhood Meeting</h3>
+                    <p><strong>Wednesday, March 25, 2026</strong><br>Visit tables from 6:00–6:30 p.m. and again from 7:30–8:00 p.m., with speakers from 6:30–7:30 p.m. at St. Matthew’s Episcopal Church, Huffman Hall.</p>
+                    <p>Big parking lot at 4121 Steck Avenue. This is a good chance to raise concerns directly with Council Member Marc Duchen and speak with City of Austin departments, including code enforcement.</p>
+                    <p><a href="https://nwaca.org/portfolio-view/nwaca-annual-neighborhood-meeting-3-25-26/" target="_blank">View meeting details</a></p>
+                </div>
+
+                <div class="quick-start-card">
+                    <span class="step-label">Step 3</span>
+                    <h3>For Each Major Event: File 311, Then Follow Up</h3>
+                    <p>On a per-event basis, open an Austin 311 service request using:</p>
+                    <p><strong>Request Code Officer → Land Use Violation(s) → Running a Business out of a Residence</strong></p>
+                    <p>Then follow up with Eric Gardner and include the 311 service request number if available.</p>
+                    <p><a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Open the Austin 311 service request form</a></p>
+                </div>
+            </div>
+        </section>
+        <details id="problem-details" class="collapsible-section">
+            <summary>The Problem</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> Residential event venues affect neighbors through noise, parking, traffic, crowd size, and safety concerns. Expand this section if you want the fuller explanation of how these operations disrupt neighborhood life.
+                </div>
+
             <h2>The Problem: Commercial Event Venues in Our Residential Neighborhood</h2>
             
             <div class="alert alert-info">
@@ -538,16 +714,6 @@
             
             <div class="alert alert-danger">
                 <strong>Alert:</strong> Residential properties in Northwest Hills are illegally operating as commercial event venues, violating zoning laws, deed restrictions, and noise ordinances.
-            </div>
-            
-            <div class="priority-box">
-                <h3>Top Priority: Report Every Major Event</h3>
-                <p>If you witness a major disruptive event at a residential property, the two most important actions are:</p>
-                <ol>
-                    <li><strong>Open an Austin 311 service request</strong> for each major disruptive event.</li>
-                    <li><strong>Email Austin Code Supervisor Eric Gardner</strong> with the same information and any supporting photos.</li>
-                </ol>
-                <p>Repeated, well-documented reports help the City build a record of ongoing land-use violations. Other contacts listed on this page can still be helpful, but these two steps should usually come first.</p>
             </div>
             
             <p>Our quiet residential neighborhood is being disrupted by properties operating as commercial event venues without proper permits or licensing. These operations involve:</p>
@@ -606,72 +772,71 @@
             <div class="alert">
                 <strong>Investigate Your Concerns:</strong> If you suspect a neighbor is operating a commercial venue, check platforms like <strong>Peerspace</strong>, <strong>Swimply</strong>, <strong>Giggster</strong>, and <strong>Eventup</strong> to see if their property is listed for commercial bookings. Learn more about <a href="#evidence">recognizing commercial operations</a> and <a href="#action">taking action</a>.
             </div>
-        </section>
+            </div>
+        </details>
 
-        <section id="reporting">
-            <h2>Top Reporting Steps: Austin 311 + Eric Gardner</h2>
-            
-            <div class="alert alert-danger">
-                <strong>Most Important Action:</strong> Submit an Austin 311 ticket for every major disruptive event and also email Austin Code Supervisor Eric Gardner with similar information.
-            </div>
-            
-            <p>If a residential property appears to be operating as an event venue business, consistent reporting is one of the most important ways to build a record of ongoing land-use violations. Large gatherings, amplified music, heavy traffic, unsafe parking, and crowd-related safety concerns may all help show that the activity is inconsistent with normal residential use.</p>
-            
-            <div class="steps-box">
-                <h3>1. Open an Austin 311 Service Request</h3>
-                <p><a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Open the Austin 311 service request form</a> and use the following selections:</p>
-                
-                <div class="field-guide">
-                    <h4>Choose These Options</h4>
+        <details id="reporting-details" class="collapsible-section">
+            <summary>Reporting Details</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> Contact Eric Gardner first if the venue has been affecting you over time. Then, for each major event, file a 311 land-use report and follow up with him.
+                </div>
+
+                <div class="steps-box">
+                    <h3>1. Start by contacting Eric Gardner</h3>
+                    <p>If a residential property has shown a pattern of event venue business that has affected your household, email <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> even if you are not writing about a single event that day.</p>
+                    <p>Your email should explain the overall pattern and how it has affected your use and enjoyment of your home. Describe recurring issues such as:</p>
                     <ul>
-                        <li><strong>Service Type:</strong> Request Code Officer</li>
-                        <li><strong>Violation Type:</strong> Land Use Violation(s)</li>
-                        <li><strong>Land Use Violation:</strong> Running a Business out of a Residence</li>
+                        <li>amplified music or ongoing noise,</li>
+                        <li>heavy traffic entering and leaving the property,</li>
+                        <li>parking congestion, blocked driveways, or cars lining the street,</li>
+                        <li>large numbers of guests or commercial-scale gatherings,</li>
+                        <li>safety concerns caused by crowd size, unfamiliar visitors, or impaired street access.</li>
                     </ul>
+                    <div class="legal-text">
+                        <strong>Suggested subject line:</strong> Residential event venue business impacting neighborhood – [PROPERTY ADDRESS]<br><br>
+                        <strong>Suggested opening:</strong> “I am writing to report what appears to be an event venue business operating from a residential property that has been affecting my household and neighborhood over time. I want to make sure this issue is on your radar because of the repeated impacts involving noise, traffic, parking, event scale, and safety concerns.”
+                    </div>
                 </div>
-                
-                <h4>What to put in “Additional Details”</h4>
-                <p>Describe the activity as an <strong>event venue business</strong> or a <strong>commercial event operation</strong> occurring at a residential property. Include anything you observed that helps show the scale and impact on the neighborhood, such as:</p>
-                <ul>
-                    <li>amplified music or other significant noise,</li>
-                    <li>heavy traffic entering and leaving the property,</li>
-                    <li>parking congestion, blocked driveways, or cars lining the street,</li>
-                    <li>large numbers of guests or unusually high event scale,</li>
-                    <li>safety concerns caused by crowd size, unfamiliar visitors, or impaired street access.</li>
-                </ul>
-                
+
+                <div class="steps-box">
+                    <h3>2. For each major event, open an Austin 311 service request</h3>
+                    <p><a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Open the Austin 311 service request form</a> and use the following selections:</p>
+                    <div class="field-guide">
+                        <h4>Choose These Options</h4>
+                        <ul>
+                            <li><strong>Service Type:</strong> Request Code Officer</li>
+                            <li><strong>Violation Type:</strong> Land Use Violation(s)</li>
+                            <li><strong>Land Use Violation:</strong> Running a Business out of a Residence</li>
+                        </ul>
+                    </div>
+                    <h4>What to put in “Additional Details”</h4>
+                    <p>Describe the activity as an <strong>event venue business</strong> or a <strong>commercial event operation</strong> occurring at a residential property. Include the event-specific impacts you observed, such as noise, traffic, parking, scale, or safety concerns.</p>
+                    <div class="alert">
+                        <strong>Important wording tip:</strong> Avoid using the words <strong>“rental,” “short-term rental,”</strong> or similar STR-style terminology in the 311 ticket. Focus instead on the property being used as an <strong>event venue business</strong> or on other <strong>land-use impacts</strong> in a residential area.
+                    </div>
+                    <h4>What to upload</h4>
+                    <p>Upload any photos that help substantiate your concerns regarding <strong>noise, traffic, parking, scale, or safety</strong>. Examples include overflow parking, large crowds, event equipment, or other visible signs of commercial-scale activity.</p>
+                </div>
+
+                <div class="steps-box">
+                    <h3>3. Follow up with Eric Gardner after each major event</h3>
+                    <p>After opening the 311 ticket, follow up with <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> and include the 311 service request number if available.</p>
+                    <p>This helps connect your broader pattern-of-impact email with event-specific reports and documentation.</p>
+                </div>
+
                 <div class="alert">
-                    <strong>Important wording tip:</strong> Avoid using the words <strong>“rental,” “short-term rental,”</strong> or similar STR-style terminology in the 311 ticket. Those terms may route the complaint into a different enforcement lane. Focus instead on the property being used as an <strong>event venue business</strong> or on other <strong>land-use impacts</strong> in a residential area.
-                </div>
-                
-                <h4>What to upload</h4>
-                <p>Upload any photos that help substantiate your concerns regarding <strong>noise, traffic, parking, scale, or safety</strong>. Examples include overflow parking, large crowds, event equipment, or other visible signs of commercial-scale activity.</p>
-            </div>
-            
-            <div class="steps-box">
-                <h3>2. Email Austin Code Supervisor Eric Gardner</h3>
-                <p>After opening the 311 ticket, also send a direct email to <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> with similar information and any supporting photos.</p>
-                <p>Your email should generally include:</p>
-                <ul>
-                    <li>the property address,</li>
-                    <li>the date and approximate time of the event,</li>
-                    <li>a short summary of the observed event venue activity,</li>
-                    <li>specific concerns about noise, traffic, parking, scale, or safety,</li>
-                    <li>the Austin 311 service request number, if you already received it.</li>
-                </ul>
-                
-                <div class="legal-text">
-                    <strong>Suggested subject line:</strong> Residential event venue business complaint – [PROPERTY ADDRESS]<br><br>
-                    <strong>Suggested opening:</strong> “I am reporting what appears to be an event venue business operating at a residential property. I have also submitted an Austin 311 service request. Below are the details I observed regarding noise, traffic, parking, event scale, and neighborhood safety concerns.”
+                    <strong>Best practice:</strong> Treat the Gardner email and the 311 ticket as complementary tools. The first puts the overall problem on his radar; the second builds the per-event record.
                 </div>
             </div>
-            
-            <div class="alert">
-                <strong>Best practice:</strong> Report each major disruptive event separately. A clear pattern of repeated reports is often more useful than one large complaint sent long after the fact.
-            </div>
-        </section>
+        </details>
         
-        <section id="rights">
+        <details id="legal-background" class="collapsible-section">
+            <summary>Your Rights</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> Residents have protections under noise rules, deed restrictions, and zoning laws. Expand this section for the detailed background and source links.
+                </div>
             <h2>Your Rights as a Resident</h2>
             
             <div class="alert">
@@ -705,9 +870,15 @@
                 <li>Commercial property tax rates</li>
                 <li><a href="https://www.austintexas.gov/department/short-term-rentals" target="_blank">Hotel occupancy tax collection</a></li>
             </ul>
-        </section>
+            </div>
+        </details>
         
-        <section id="laws">
+        <details class="collapsible-section">
+            <summary>Legal Violations</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> These properties may violate home occupation rules, noise restrictions, deed restrictions, and other land-use requirements. Expand for the full legal background.
+                </div>
             <h2>Legal Violations</h2>
             
             <h3>City Code Violations</h3>
@@ -754,9 +925,15 @@
             <div class="alert">
                 <strong>Market Reality:</strong> Properties near commercial operations in residential areas typically experience <a href="https://trg.rismedia.com/25321/1067002/null/94935" target="_blank">reduced marketability and sale prices</a>. According to industry standards, living near ongoing nuisances can lower property values by 5-10%. Buyers often view commercial activities in residential areas as a red flag, leading to longer time on market and price reductions.
             </div>
-        </section>
+            </div>
+        </details>
         
-        <section id="evidence">
+        <details id="evidence-details" class="collapsible-section">
+            <summary>Recognizing Commercial Operations</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> Event venue activity often leaves visible clues such as large gatherings, professional equipment, overflow parking, and online marketing. Expand for the examples and investigation tips.
+                </div>
             <h2>Recognizing Commercial Operations</h2>
             
             <p>Commercial event venues operating in residential areas often share similar characteristics:</p>
@@ -790,401 +967,378 @@
                 <li><strong>Document patterns:</strong> Regular large gatherings, commercial equipment, professional services</li>
                 <li><strong>Review customer feedback:</strong> Online reviews often reveal the commercial nature and scale of operations</li>
             </ul>
-        </section>
+            </div>
+        </details>
         
-        <section id="faq">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="alert">
-                <strong>Quick Links to Questions:</strong>
-                <ol>
-                    <li><a href="#faq1">Why are these 'event venues' a commercial operation and not a short-term rental?</a></li>
-                    <li><a href="#faq2">Don't homeowners have a right to run a home business?</a></li>
-                    <li><a href="#faq3">How are deed restrictions enforced?</a></li>
-                    <li><a href="#faq4">I'm being told by Austin police that noise ordinance laws don't apply until 10pm. What's happening?</a></li>
-                    <li><a href="#faq5">How do nearby event venues affect selling my home?</a></li>
-                    <li><a href="#faq6">The owners of these event venues are just trying to make a living.</a></li>
-                    <li><a href="#faq7">What if the venue owner claims they're just having "friends" over?</a></li>
-                    <li><a href="#faq8">Can I remain anonymous when reporting violations?</a></li>
-                    <li><a href="#faq9">What if I'm worried about being labeled a "NIMBY" or "Karen"?</a></li>
-                    <li><a href="#faq10">What happens if the city won't enforce the laws?</a></li>
-                </ol>
+        <details id="faq-details" class="collapsible-section">
+            <summary>Frequently Asked Questions</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> The FAQ is still here, but each question is now optional reading so the page is easier to scan.
+                </div>
+
+                <details class="faq-item">
+                    <summary>1. Why are these “event venues” a commercial operation and not a short-term rental?</summary>
+                    <div class="faq-answer">
+                        <div class="alert">
+                            <strong>Key Legal Distinction:</strong> Party and event venue rentals are commercial assembly operations that are fundamentally different from—and not protected by—short-term rental regulations.
+                        </div>
+                        <p>Understanding this distinction is crucial for enforcement and legal action:</p>
+                        <br>
+                        <h4>Short-Term Rental Legal Definition</h4>
+                        <p>Short-term rentals are legally defined as <a href="https://www.airdna.co/blog/what-is-considered-a-short-term-rental" target="_blank">"properties typically rented for less than 30 days"</a> for the <strong>primary purpose of temporary lodging</strong>. Key characteristics include:</p>
+                        <ul>
+                            <li><strong>Sleeping accommodations:</strong> Guests rent dwelling space to sleep and lodge temporarily</li>
+                            <li><strong>Residential use:</strong> The property functions as a temporary residence for visitors</li>
+                            <li><strong>Limited occupancy:</strong> Typically designed for family-sized groups seeking lodging</li>
+                            <li><strong>Overnight stays:</strong> The rental period assumes guests will sleep on the premises</li>
+                        </ul>
+                        <br>
+                        <h4>Assembly/Event Venue Legal Definition</h4>
+                        <p>Event venues fall under "Assembly Occupancy" as defined by the <a href="https://idighardware.com/2022/09/decoded-requirements-for-assembly-occupancies/" target="_blank">International Building Code and International Fire Code</a>:</p>
+                        <div class="legal-text">
+                            <strong>Assembly Group (A) occupancy</strong> includes "the use of a building or structure, or a portion thereof, for the <strong>gathering of persons for purposes such as civic, social, or religious functions; recreation, food or drink consumption</strong> or awaiting transportation."
+                        </div>
+                        <p>Key characteristics that distinguish event venues as commercial assembly operations:</p>
+                        <ul>
+                            <li><strong>Gathering purpose:</strong> <a href="https://ccpia.org/occupancy-load-signs/" target="_blank">"Gatherings of 50 persons or more for civic, social, or religious functions"</a></li>
+                            <li><strong>Social functions:</strong> Events focused on entertainment, celebration, or business purposes</li>
+                            <li><strong>Food/drink consumption:</strong> Parties involving catering, bars, or social dining</li>
+                            <li><strong>Commercial-scale occupancy:</strong> Events regularly exceeding residential capacity limits</li>
+                            <li><strong>Assembly safety requirements:</strong> <a href="https://www.dhpace.com/safety-compliance-in-assembly-occupancies/" target="_blank">Properties with 50+ occupants trigger assembly occupancy safety regulations</a></li>
+                        </ul>
+                        <br>
+                        <h4>Critical Legal Distinction: The “Single Party” Rule</h4>
+                        <p>Even if someone tries to claim their event venue qualifies as a short-term rental, Austin's STR regulations themselves prohibit party venue operations:</p>
+                        <div class="legal-text">
+                            <strong>Austin City Code § 25-2-788(B)(1)(d):</strong> For owner-occupied short-term rentals (Type 1), "rental of the partial unit is limited to a <strong>single party of individuals</strong>."
+                        </div>
+                        <p>This provision creates a clear legal barrier between legitimate STRs and event venues:</p>
+                        <ul>
+                            <li><strong>"Single party" defined:</strong> A cohesive group traveling together (family, friends, colleagues on a trip)</li>
+                            <li><strong>Event venues violate this:</strong> Parties and events inherently involve <strong>multiple distinct parties</strong>—the host, various guest groups who arrive separately, vendors, and attendees who don't know each other</li>
+                            <li><strong>Wedding example:</strong> A wedding reception involves the bride's family, groom's family, friends from work, college friends, neighbors—clearly multiple parties, not a single party</li>
+                            <li><strong>Corporate event example:</strong> Company parties bring together employees from different departments who constitute multiple parties, not a single cohesive group</li>
+                        </ul>
+                        <div class="alert">
+                            <strong>Legal Significance:</strong> This "single party" restriction appears specifically designed to prevent STRs from becoming event venues. An owner cannot comply with both the STR requirement of renting to a "single party" AND operate as an event venue hosting multiple independent parties.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>2. Don’t homeowners have a right to run a home business?</summary>
+                    <div class="faq-answer">
+                        <p>While Texas law generally supports property rights, homeowners in residential areas have significant legal limitations on commercial activities:</p>
+                        <br>
+                        <h4>Zoning Restrictions</h4>
+                        <p><a href="https://www.austintexas.gov/sites/default/files/files/Planning/zoning_guide.pdf" target="_blank">Austin's zoning ordinances</a> strictly regulate home businesses in residential areas. Event venues are explicitly prohibited because they:</p>
+                        <ul>
+                            <li>Generate commercial-level traffic incompatible with residential streets</li>
+                            <li>Create noise and disturbances beyond what's allowed in residential zones</li>
+                            <li>Require assembly occupancy permits and safety measures not available in residential properties</li>
+                            <li>Violate the fundamental purpose of residential zoning—to preserve quiet enjoyment for families</li>
+                        </ul>
+                        <br>
+                        <h4>Deed Restrictions Override Property Rights</h4>
+                        <p>When homeowners purchase property with deed restrictions, they voluntarily agree to limitations. Northwest Hills deed restrictions explicitly state:</p>
+                        <div class="legal-text">
+                            "No Lot shall be used except for residential purposes."
+                        </div>
+                        <p>These are legally binding contracts that courts consistently enforce, even against claims of property rights.</p>
+                        <br>
+                        <h4>Permitted Home Businesses vs. Event Venues</h4>
+                        <p>Austin does allow certain home-based businesses that:</p>
+                        <ul>
+                            <li>Don't generate customer traffic (online businesses, consulting)</li>
+                            <li>Don't create noise or disturbances</li>
+                            <li>Don't employ non-resident staff on-site</li>
+                            <li>Don't change the residential character of the property</li>
+                        </ul>
+                        <p>Event venues violate all of these conditions, making them illegal home businesses.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>3. How are deed restrictions enforced?</summary>
+                    <div class="faq-answer">
+                        <p>Deed restrictions are private legal agreements that run with the land and bind all property owners in the subdivision. Here's how enforcement works:</p>
+                        <br>
+                        <h4>Who Can Enforce</h4>
+                        <ul>
+                            <li><strong>Any property owner</strong> in the subdivision has legal standing to enforce deed restrictions</li>
+                            <li><strong>Homeowners associations</strong> often take the lead but aren't required</li>
+                            <li><strong>Groups of neighbors</strong> can join together to share legal costs</li>
+                        </ul>
+                        <br>
+                        <h4>Enforcement Process</h4>
+                        <ol>
+                            <li><strong>Documentation:</strong> Gather evidence of violations (photos, videos, advertisements, witness statements)</li>
+                            <li><strong>Demand letter:</strong> Attorney sends formal notice demanding compliance</li>
+                            <li><strong>Negotiation:</strong> Often violations stop after receiving legal notice</li>
+                            <li><strong>Legal action:</strong> File lawsuit in district court if violations continue</li>
+                            <li><strong>Court order:</strong> Judge issues injunction stopping the commercial use</li>
+                        </ol>
+                        <br>
+                        <h4>Financial Considerations</h4>
+                        <div class="alert">
+                            <strong>Important:</strong> Northwest Hills deed restrictions include attorney fee recovery provisions. This means violators may have to pay your legal costs if you win, making enforcement financially feasible for homeowners.
+                        </div>
+                        <p>Courts in Texas regularly enforce deed restrictions and have the power to:</p>
+                        <ul>
+                            <li>Issue permanent injunctions stopping commercial activities</li>
+                            <li>Award monetary damages for lost property value</li>
+                            <li>Require violators to pay attorney fees and court costs</li>
+                            <li>Hold violators in contempt for ignoring court orders</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>4. I’m being told by Austin police that noise ordinance laws don’t apply until 10pm. What’s happening?</summary>
+                    <div class="faq-answer">
+                        <p>This is a serious and widespread problem caused by <strong>incorrect training and misinformation</strong> within APD. Here's what you need to know:</p>
+                        <br>
+                        <h4>The Actual Law</h4>
+                        <p><a href="https://library.municode.com/tx/austin/codes/code_of_ordinances/469236?nodeId=TIT9PRAC_CH9-2NOAMSO" target="_blank">Austin City Code Title 9, Chapter 9-2</a> clearly states:</p>
+                        <div class="legal-text">
+                            <strong>During daytime (7am-10pm):</strong> Sound equipment cannot exceed 75 decibels at the property line<br>
+                            <strong>During nighttime (10pm-7am):</strong> No audible sound from sound equipment beyond property line
+                        </div>
+                        <br>
+                        <h4>The Misinformation Problem</h4>
+                        <p>Many APD officers incorrectly believe:</p>
+                        <ul>
+                            <li>❌ "There's no noise limit until 10pm" - <strong>FALSE</strong></li>
+                            <li>❌ "People can make any amount of noise during the day" - <strong>FALSE</strong></li>
+                            <li>❌ "75 decibels only applies at night" - <strong>FALSE</strong></li>
+                        </ul>
+                        <br>
+                        <h4>What You Can Do</h4>
+                        <ol>
+                            <li><strong>Know the ordinance number:</strong> Title 9, Chapter 9-2, Section 9-2-5</li>
+                            <li><strong>Request a supervisor:</strong> If an officer gives incorrect information</li>
+                            <li><strong>Document everything:</strong> Record interactions and get badge numbers</li>
+                            <li><strong>Contact APD District Representative:</strong> Report training issues to Officer Andrew Kabbah</li>
+                            <li><strong>File formal complaints:</strong> Use APD's complaint system for persistent problems</li>
+                            <li><strong>Contact City Council:</strong> Report systemic enforcement failures</li>
+                        </ol>
+                        <div class="alert">
+                            <strong>Pro tip:</strong> Download a decibel meter app on your phone. 75 decibels is about as loud as highway traffic. Professional DJ equipment at parties easily exceeds 85-95 decibels.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>5. How do nearby event venues affect selling my home?</summary>
+                    <div class="faq-answer">
+                        <p>Living next to commercial event venues significantly impacts property marketability and value:</p>
+                        <br>
+                        <h4>Market Reality</h4>
+                        <p>Properties near commercial event venues face substantial challenges:</p>
+                        <ul>
+                            <li><strong>Buyer deterrence:</strong> Most families avoid homes near party venues</li>
+                            <li><strong>Value reduction:</strong> Properties near nuisances typically sell for 5-10% less</li>
+                            <li><strong>Extended marketing time:</strong> Homes take longer to sell</li>
+                            <li><strong>Financing difficulties:</strong> Lenders may be hesitant about properties near commercial operations</li>
+                            <li><strong>Limited buyer pool:</strong> Fewer interested buyers means less competition and lower offers</li>
+                        </ul>
+                        <br>
+                        <h4>Real Estate Professional Obligations</h4>
+                        <p>While <a href="https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.008" target="_blank">Texas Property Code Section 5.008</a> focuses on the condition of the property being sold, real estate agents have broader professional disclosure duties:</p>
+                        <div class="legal-text">
+                            <strong>TREC Professional Standards:</strong> Real estate agents must disclose "neighborhood issues" including "proximity to nuisances" that could significantly influence a buyer's decision.
+                        </div>
+                        <ul>
+                            <li><strong>Material neighborhood conditions:</strong> Agents should disclose commercial operations affecting residential character</li>
+                            <li><strong>Ongoing disturbances:</strong> Noise, traffic, or safety concerns from neighboring properties</li>
+                            <li><strong>Market factors:</strong> Conditions that impact property values and desirability</li>
+                        </ul>
+                        <br>
+                        <h4>Protecting Your Investment</h4>
+                        <p>To protect your property value:</p>
+                        <ul>
+                            <li><strong>Document the violations:</strong> Build evidence of illegal commercial operations</li>
+                            <li><strong>Pursue enforcement:</strong> Work to stop violations before selling</li>
+                            <li><strong>Work with knowledgeable agents:</strong> Choose professionals who understand neighborhood disclosure issues</li>
+                            <li><strong>Consider legal action:</strong> Deed restriction enforcement can stop commercial operations and protect values</li>
+                        </ul>
+                        <div class="alert alert-danger">
+                            <strong>Market Impact:</strong> Properties near confirmed commercial event venues typically experience 5-10% reduction in sale price and significantly longer time on market. Many buyers won't even view homes near known party venues, severely limiting your buyer pool.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>6. The owners of these event venues are just trying to make a living.</summary>
+                    <div class="faq-answer">
+                        <p>While we understand economic pressures, this argument doesn't justify violating laws and destroying neighborhood quality of life:</p>
+                        <br>
+                        <h4>Legal Business Options Exist</h4>
+                        <p>Property owners who want to run event venues have legal options:</p>
+                        <ul>
+                            <li>Purchase property in commercially zoned areas</li>
+                            <li>Apply for proper zoning changes and permits</li>
+                            <li>Operate legitimate, licensed businesses that pay taxes</li>
+                            <li>Rent their homes as actual STRs (for lodging, not events)</li>
+                        </ul>
+                        <br>
+                        <h4>The Real Costs to Neighbors</h4>
+                        <p>Illegal event venues impose significant costs on everyone else:</p>
+                        <ul>
+                            <li><strong>Property values:</strong> Neighbors lose tens of thousands in home equity</li>
+                            <li><strong>Quality of life:</strong> Families can't enjoy their own homes and yards</li>
+                            <li><strong>Safety:</strong> Children are exposed to risks from constant strangers</li>
+                            <li><strong>Infrastructure:</strong> Residents pay for road damage from commercial traffic</li>
+                            <li><strong>Tax fairness:</strong> Event venues avoid commercial property taxes and hotel taxes</li>
+                        </ul>
+                        <br>
+                        <h4>This Is About Fairness</h4>
+                        <p>When someone buys property in a residential neighborhood with deed restrictions, they agree to the rules. Breaking those rules to make money while destroying neighbors' property values and peace isn't entrepreneurship—it's exploitation.</p>
+                        <div class="alert">
+                            <strong>Bottom line:</strong> No one has the right to turn a residential neighborhood into a commercial district without consent. There are proper channels for commercial activities, and residential neighborhoods aren't it.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>7. What if the venue owner claims they’re just having “friends” over?</summary>
+                    <div class="faq-answer">
+                        <p>This is a common deflection tactic, but the evidence clearly distinguishes commercial operations from personal gatherings:</p>
+                        <br>
+                        <h4>Commercial Operations Leave Clear Evidence</h4>
+                        <ul>
+                            <li><strong>Online listings:</strong> Properties advertised on Peerspace, Swimply, etc.</li>
+                            <li><strong>Customer reviews:</strong> Dozens or hundreds of reviews from paying customers</li>
+                            <li><strong>Business marketing:</strong> Instagram business accounts, websites, promotional materials</li>
+                            <li><strong>Payment processing:</strong> Regular commercial transactions through platforms</li>
+                            <li><strong>Pattern of strangers:</strong> Different groups every week who don't know the owners</li>
+                        </ul>
+                        <br>
+                        <h4>Legal Standards</h4>
+                        <p>Courts look at the "totality of circumstances" including:</p>
+                        <ul>
+                            <li>Frequency of events (weekly vs. occasional)</li>
+                            <li>Commercial equipment (professional sound systems, event furniture)</li>
+                            <li>Money changing hands (rental fees, deposits)</li>
+                            <li>Advertising and marketing efforts</li>
+                            <li>Scale exceeding normal residential use</li>
+                        </ul>
+                        <p>When properties have 131+ customer reviews and regular 40-70 person events, the "just friends" defense doesn't hold up in court.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>8. Can I remain anonymous when reporting violations?</summary>
+                    <div class="faq-answer">
+                        <p>Yes, there are several ways to report violations while protecting your identity:</p>
+                        <br>
+                        <h4>Anonymous Reporting Options</h4>
+                        <ul>
+                            <li><strong>311 App:</strong> Can be used anonymously for code violations</li>
+                            <li><strong>NWACA:</strong> Can coordinate community response without revealing individuals</li>
+                            <li><strong>Multiple neighbors:</strong> Group complaints protect individual identity</li>
+                            <li><strong>City enforcement:</strong> Let government agencies be the enforcer, not you personally</li>
+                        </ul>
+                        <br>
+                        <h4>Why Anonymity Matters</h4>
+                        <p>Protecting your identity helps avoid:</p>
+                        <ul>
+                            <li>Retaliation or harassment from venue operators</li>
+                            <li>Uncomfortable neighbor relationships</li>
+                            <li>Being targeted on social media or review sites</li>
+                            <li>Potential property damage or vandalism</li>
+                        </ul>
+                        <div class="alert">
+                            <strong>Strategy tip:</strong> Work through NWACA or coordinate with multiple neighbors. There's strength in numbers, and it's harder to retaliate against a group than an individual.
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>9. What if I’m worried about being labeled a “NIMBY” or “Karen”?</summary>
+                    <div class="faq-answer">
+                        <p>Standing up for your legal rights and quality of life doesn't make you unreasonable. Here's perspective on this concern:</p>
+                        <br>
+                        <h4>You're Protecting Legal Rights</h4>
+                        <p>You're not opposing legitimate development or legal businesses. You're enforcing:</p>
+                        <ul>
+                            <li>Existing zoning laws designed to protect residential areas</li>
+                            <li>Deed restrictions everyone agreed to when buying property</li>
+                            <li>Noise ordinances that ensure peaceful enjoyment</li>
+                            <li>Tax laws requiring businesses to pay their fair share</li>
+                        </ul>
+                        <br>
+                        <h4>The Real Issue</h4>
+                        <p>This isn't about stopping progress or being anti-business. It's about:</p>
+                        <ul>
+                            <li><strong>Appropriate location:</strong> Commercial businesses belong in commercial zones</li>
+                            <li><strong>Following rules:</strong> Everyone else manages to follow zoning laws</li>
+                            <li><strong>Protecting families:</strong> Children deserve safe, quiet neighborhoods</li>
+                            <li><strong>Preserving investment:</strong> Your home is likely your largest asset</li>
+                        </ul>
+                        <br>
+                        <h4>Response to Name-Calling</h4>
+                        <p>If someone tries to dismiss your concerns with labels, remember:</p>
+                        <ul>
+                            <li>They're deflecting from their illegal activities</li>
+                            <li>Name-calling doesn't change the law</li>
+                            <li>You have broad community support</li>
+                            <li>Courts consistently uphold residential protections</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>10. What happens if the city won’t enforce the laws?</summary>
+                    <div class="faq-answer">
+                        <p>You have multiple escalation paths if initial enforcement efforts fail:</p>
+                        <br>
+                        <h4>Political Pressure</h4>
+                        <ul>
+                            <li><strong>City Council:</strong> Attend meetings, organize neighbors to speak</li>
+                            <li><strong>Media attention:</strong> Local news often covers neighborhood quality issues</li>
+                            <li><strong>Election accountability:</strong> Support candidates who enforce residential protections</li>
+                        </ul>
+                        <br>
+                        <h4>Legal Action</h4>
+                        <ul>
+                            <li><strong>Deed restriction lawsuit:</strong> Private enforcement with attorney fee recovery</li>
+                            <li><strong>Nuisance claims:</strong> Sue for damages and injunctive relief</li>
+                            <li><strong>Mandamus action:</strong> Force city to enforce its own ordinances</li>
+                        </ul>
+                        <br>
+                        <h4>Community Organization</h4>
+                        <ul>
+                            <li><strong>NWACA involvement:</strong> Leverage neighborhood association resources</li>
+                            <li><strong>Petition drives:</strong> Demonstrate widespread community opposition</li>
+                            <li><strong>Documentation campaign:</strong> Build overwhelming evidence file</li>
+                        </ul>
+                        <div class="alert">
+                            <strong>Remember:</strong> Persistence pays off. Cities often ignore single complaints but respond to sustained, organized community pressure. Document everything and don't give up.
+                        </div>
+                    </div>
+                </details>
             </div>
-            
-            <br>
-            
-            <h3 id="faq1">1. Why are these 'event venues' a commercial operation and not a short-term rental?</h3>
-            
-            <div class="alert">
-                <strong>Key Legal Distinction:</strong> Party and event venue rentals are commercial assembly operations that are fundamentally different from—and not protected by—short-term rental regulations.
-            </div>
-            
-            <p>Understanding this distinction is crucial for enforcement and legal action:</p>
-            
-            <br>
-            
-            <h4>Short-Term Rental Legal Definition</h4>
-            <p>Short-term rentals are legally defined as <a href="https://www.airdna.co/blog/what-is-considered-a-short-term-rental" target="_blank">"properties typically rented for less than 30 days"</a> for the <strong>primary purpose of temporary lodging</strong>. Key characteristics include:</p>
-            <ul>
-                <li><strong>Sleeping accommodations:</strong> Guests rent dwelling space to sleep and lodge temporarily</li>
-                <li><strong>Residential use:</strong> The property functions as a temporary residence for visitors</li>
-                <li><strong>Limited occupancy:</strong> Typically designed for family-sized groups seeking lodging</li>
-                <li><strong>Overnight stays:</strong> The rental period assumes guests will sleep on the premises</li>
-            </ul>
-            
-            <br>
-            
-            <h4>Assembly/Event Venue Legal Definition</h4>
-            <p>Event venues fall under "Assembly Occupancy" as defined by the <a href="https://idighardware.com/2022/09/decoded-requirements-for-assembly-occupancies/" target="_blank">International Building Code and International Fire Code</a>:</p>
-            
-            <div class="legal-text">
-                <strong>Assembly Group (A) occupancy</strong> includes "the use of a building or structure, or a portion thereof, for the <strong>gathering of persons for purposes such as civic, social, or religious functions; recreation, food or drink consumption</strong> or awaiting transportation."
-            </div>
-            
-            <p>Key characteristics that distinguish event venues as commercial assembly operations:</p>
-            <ul>
-                <li><strong>Gathering purpose:</strong> <a href="https://ccpia.org/occupancy-load-signs/" target="_blank">"Gatherings of 50 persons or more for civic, social, or religious functions"</a></li>
-                <li><strong>Social functions:</strong> Events focused on entertainment, celebration, or business purposes</li>
-                <li><strong>Food/drink consumption:</strong> Parties involving catering, bars, or social dining</li>
-                <li><strong>Commercial-scale occupancy:</strong> Events regularly exceeding residential capacity limits</li>
-                <li><strong>Assembly safety requirements:</strong> <a href="https://www.dhpace.com/safety-compliance-in-assembly-occupancies/" target="_blank">Properties with 50+ occupants trigger assembly occupancy safety regulations</a></li>
-            </ul>
-            
-            <br>
-            
-            <h4>Critical Legal Distinction: The "Single Party" Rule</h4>
-            <p>Even if someone tries to claim their event venue qualifies as a short-term rental, Austin's STR regulations themselves prohibit party venue operations:</p>
-            
-            <div class="legal-text">
-                <strong>Austin City Code § 25-2-788(B)(1)(d):</strong> For owner-occupied short-term rentals (Type 1), "rental of the partial unit is limited to a <strong>single party of individuals</strong>."
-            </div>
-            
-            <p>This provision creates a clear legal barrier between legitimate STRs and event venues:</p>
-            
-            <ul>
-                <li><strong>"Single party" defined:</strong> A cohesive group traveling together (family, friends, colleagues on a trip)</li>
-                <li><strong>Event venues violate this:</strong> Parties and events inherently involve <strong>multiple distinct parties</strong>—the host, various guest groups who arrive separately, vendors, and attendees who don't know each other</li>
-                <li><strong>Wedding example:</strong> A wedding reception involves the bride's family, groom's family, friends from work, college friends, neighbors—clearly multiple parties, not a single party</li>
-                <li><strong>Corporate event example:</strong> Company parties bring together employees from different departments who constitute multiple parties, not a single cohesive group</li>
-            </ul>
-            
-            <div class="alert">
-                <strong>Legal Significance:</strong> This "single party" restriction appears specifically designed to prevent STRs from becoming event venues. An owner cannot comply with both the STR requirement of renting to a "single party" AND operate as an event venue hosting multiple independent parties.
-            </div>
-            
-            <br>
-            
-            <h3 id="faq2">2. Don't homeowners have a right to run a home business?</h3>
-            
-            <p>While Texas law generally supports property rights, homeowners in residential areas have significant legal limitations on commercial activities:</p>
-            
-            <br>
-            
-            <h4>Zoning Restrictions</h4>
-            <p><a href="https://www.austintexas.gov/sites/default/files/files/Planning/zoning_guide.pdf" target="_blank">Austin's zoning ordinances</a> strictly regulate home businesses in residential areas. Event venues are explicitly prohibited because they:</p>
-            <ul>
-                <li>Generate commercial-level traffic incompatible with residential streets</li>
-                <li>Create noise and disturbances beyond what's allowed in residential zones</li>
-                <li>Require assembly occupancy permits and safety measures not available in residential properties</li>
-                <li>Violate the fundamental purpose of residential zoning—to preserve quiet enjoyment for families</li>
-            </ul>
-            
-            <br>
-            
-            <h4>Deed Restrictions Override Property Rights</h4>
-            <p>When homeowners purchase property with deed restrictions, they voluntarily agree to limitations. Northwest Hills deed restrictions explicitly state:</p>
-            <div class="legal-text">
-                "No Lot shall be used except for residential purposes."
-            </div>
-            <p>These are legally binding contracts that courts consistently enforce, even against claims of property rights.</p>
-            
-            <br>
-            
-            <h4>Permitted Home Businesses vs. Event Venues</h4>
-            <p>Austin does allow certain home-based businesses that:</p>
-            <ul>
-                <li>Don't generate customer traffic (online businesses, consulting)</li>
-                <li>Don't create noise or disturbances</li>
-                <li>Don't employ non-resident staff on-site</li>
-                <li>Don't change the residential character of the property</li>
-            </ul>
-            <p>Event venues violate all of these conditions, making them illegal home businesses.</p>
-            
-            <br>
-            
-            <h3 id="faq3">3. How are deed restrictions enforced?</h3>
-            
-            <p>Deed restrictions are private legal agreements that run with the land and bind all property owners in the subdivision. Here's how enforcement works:</p>
-            
-            <br>
-            
-            <h4>Who Can Enforce</h4>
-            <ul>
-                <li><strong>Any property owner</strong> in the subdivision has legal standing to enforce deed restrictions</li>
-                <li><strong>Homeowners associations</strong> often take the lead but aren't required</li>
-                <li><strong>Groups of neighbors</strong> can join together to share legal costs</li>
-            </ul>
-            
-            <br>
-            
-            <h4>Enforcement Process</h4>
-            <ol>
-                <li><strong>Documentation:</strong> Gather evidence of violations (photos, videos, advertisements, witness statements)</li>
-                <li><strong>Demand letter:</strong> Attorney sends formal notice demanding compliance</li>
-                <li><strong>Negotiation:</strong> Often violations stop after receiving legal notice</li>
-                <li><strong>Legal action:</strong> File lawsuit in district court if violations continue</li>
-                <li><strong>Court order:</strong> Judge issues injunction stopping the commercial use</li>
-            </ol>
-            
-            <br>
-            
-            <h4>Financial Considerations</h4>
-            <div class="alert">
-                <strong>Important:</strong> Northwest Hills deed restrictions include attorney fee recovery provisions. This means violators may have to pay your legal costs if you win, making enforcement financially feasible for homeowners.
-            </div>
-            
-            <p>Courts in Texas regularly enforce deed restrictions and have the power to:</p>
-            <ul>
-                <li>Issue permanent injunctions stopping commercial activities</li>
-                <li>Award monetary damages for lost property value</li>
-                <li>Require violators to pay attorney fees and court costs</li>
-                <li>Hold violators in contempt for ignoring court orders</li>
-            </ul>
-            
-            <br>
-            
-            <h3 id="faq4">4. I'm being told by Austin police that noise ordinance laws don't apply until 10pm. What's happening?</h3>
-            
-            <p>This is a serious and widespread problem caused by <strong>incorrect training and misinformation</strong> within APD. Here's what you need to know:</p>
-            <br>
-            <h4>The Actual Law</h4>
-            <p><a href="https://library.municode.com/tx/austin/codes/code_of_ordinances/469236?nodeId=TIT9PRAC_CH9-2NOAMSO" target="_blank">Austin City Code Title 9, Chapter 9-2</a> clearly states:</p>
-            <div class="legal-text">
-                <strong>During daytime (7am-10pm):</strong> Sound equipment cannot exceed 75 decibels at the property line<br>
-                <strong>During nighttime (10pm-7am):</strong> No audible sound from sound equipment beyond property line
-            </div>
-            <br>
-            <h4>The Misinformation Problem</h4>
-            <p>Many APD officers incorrectly believe:</p>
-            <ul>
-                <li>❌ "There's no noise limit until 10pm" - <strong>FALSE</strong></li>
-                <li>❌ "People can make any amount of noise during the day" - <strong>FALSE</strong></li>
-                <li>❌ "75 decibels only applies at night" - <strong>FALSE</strong></li>
-            </ul>
-            <br>
-            <h4>What You Can Do</h4>
-            <ol>
-                <li><strong>Know the ordinance number:</strong> Title 9, Chapter 9-2, Section 9-2-5</li>
-                <li><strong>Request a supervisor:</strong> If an officer gives incorrect information</li>
-                <li><strong>Document everything:</strong> Record interactions and get badge numbers</li>
-                <li><strong>Contact APD District Representative:</strong> Report training issues to Officer Andrew Kabbah</li>
-                <li><strong>File formal complaints:</strong> Use APD's complaint system for persistent problems</li>
-                <li><strong>Contact City Council:</strong> Report systemic enforcement failures</li>
-            </ol>
-            
-            <div class="alert">
-                <strong>Pro tip:</strong> Download a decibel meter app on your phone. 75 decibels is about as loud as highway traffic. Professional DJ equipment at parties easily exceeds 85-95 decibels.
-            </div>
-            
-            <br>
-            
-            <h3 id="faq5">5. How do nearby event venues affect selling my home?</h3>
-            
-            <p>Living next to commercial event venues significantly impacts property marketability and value:</p>
-            <br>
-            <h4>Market Reality</h4>
-            <p>Properties near commercial event venues face substantial challenges:</p>
-            <ul>
-                <li><strong>Buyer deterrence:</strong> Most families avoid homes near party venues</li>
-                <li><strong>Value reduction:</strong> Properties near nuisances typically sell for 5-10% less</li>
-                <li><strong>Extended marketing time:</strong> Homes take longer to sell</li>
-                <li><strong>Financing difficulties:</strong> Lenders may be hesitant about properties near commercial operations</li>
-                <li><strong>Limited buyer pool:</strong> Fewer interested buyers means less competition and lower offers</li>
-            </ul>
-            <br>
-            <h4>Real Estate Professional Obligations</h4>
-            <p>While <a href="https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.008" target="_blank">Texas Property Code Section 5.008</a> focuses on the condition of the property being sold, real estate agents have broader professional disclosure duties:</p>
-            
-            <div class="legal-text">
-                <strong>TREC Professional Standards:</strong> Real estate agents must disclose "neighborhood issues" including "proximity to nuisances" that could significantly influence a buyer's decision.
-            </div>
-            
-            <ul>
-                <li><strong>Material neighborhood conditions:</strong> Agents should disclose commercial operations affecting residential character</li>
-                <li><strong>Ongoing disturbances:</strong> Noise, traffic, or safety concerns from neighboring properties</li>
-                <li><strong>Market factors:</strong> Conditions that impact property values and desirability</li>
-            </ul>
-            <br>
-            <h4>Protecting Your Investment</h4>
-            <p>To protect your property value:</p>
-            <ul>
-                <li><strong>Document the violations:</strong> Build evidence of illegal commercial operations</li>
-                <li><strong>Pursue enforcement:</strong> Work to stop violations before selling</li>
-                <li><strong>Work with knowledgeable agents:</strong> Choose professionals who understand neighborhood disclosure issues</li>
-                <li><strong>Consider legal action:</strong> Deed restriction enforcement can stop commercial operations and protect values</li>
-            </ul>
-            
-            <div class="alert alert-danger">
-                <strong>Market Impact:</strong> Properties near confirmed commercial event venues typically experience 5-10% reduction in sale price and significantly longer time on market. Many buyers won't even view homes near known party venues, severely limiting your buyer pool.
-            </div>
-            
-            <br>
-            
-            <h3 id="faq6">6. The owners of these event venues are just trying to make a living.</h3>
-            
-            <p>While we understand economic pressures, this argument doesn't justify violating laws and destroying neighborhood quality of life:</p>
-            <br>
-            <h4>Legal Business Options Exist</h4>
-            <p>Property owners who want to run event venues have legal options:</p>
-            <ul>
-                <li>Purchase property in commercially zoned areas</li>
-                <li>Apply for proper zoning changes and permits</li>
-                <li>Operate legitimate, licensed businesses that pay taxes</li>
-                <li>Rent their homes as actual STRs (for lodging, not events)</li>
-            </ul>
-            <br>
-            <h4>The Real Costs to Neighbors</h4>
-            <p>Illegal event venues impose significant costs on everyone else:</p>
-            <ul>
-                <li><strong>Property values:</strong> Neighbors lose tens of thousands in home equity</li>
-                <li><strong>Quality of life:</strong> Families can't enjoy their own homes and yards</li>
-                <li><strong>Safety:</strong> Children are exposed to risks from constant strangers</li>
-                <li><strong>Infrastructure:</strong> Residents pay for road damage from commercial traffic</li>
-                <li><strong>Tax fairness:</strong> Event venues avoid commercial property taxes and hotel taxes</li>
-            </ul>
-            <br>
-            <h4>This Is About Fairness</h4>
-            <p>When someone buys property in a residential neighborhood with deed restrictions, they agree to the rules. Breaking those rules to make money while destroying neighbors' property values and peace isn't entrepreneurship—it's exploitation.</p>
-            
-            <div class="alert">
-                <strong>Bottom line:</strong> No one has the right to turn a residential neighborhood into a commercial district without consent. There are proper channels for commercial activities, and residential neighborhoods aren't it.
-            </div>
-            
-            <br>
-            
-            <h3 id="faq7">7. What if the venue owner claims they're just having "friends" over?</h3>
-            
-            <p>This is a common deflection tactic, but the evidence clearly distinguishes commercial operations from personal gatherings:</p>
-            <br>
-            <h4>Commercial Operations Leave Clear Evidence</h4>
-            <ul>
-                <li><strong>Online listings:</strong> Properties advertised on Peerspace, Swimply, etc.</li>
-                <li><strong>Customer reviews:</strong> Dozens or hundreds of reviews from paying customers</li>
-                <li><strong>Business marketing:</strong> Instagram business accounts, websites, promotional materials</li>
-                <li><strong>Payment processing:</strong> Regular commercial transactions through platforms</li>
-                <li><strong>Pattern of strangers:</strong> Different groups every week who don't know the owners</li>
-            </ul>
-            <br>
-            <h4>Legal Standards</h4>
-            <p>Courts look at the "totality of circumstances" including:</p>
-            <ul>
-                <li>Frequency of events (weekly vs. occasional)</li>
-                <li>Commercial equipment (professional sound systems, event furniture)</li>
-                <li>Money changing hands (rental fees, deposits)</li>
-                <li>Advertising and marketing efforts</li>
-                <li>Scale exceeding normal residential use</li>
-            </ul>
-            
-            <p>When properties have 131+ customer reviews and regular 40-70 person events, the "just friends" defense doesn't hold up in court.</p>
-            
-            <br>
-            
-            <h3 id="faq8">8. Can I remain anonymous when reporting violations?</h3>
-            
-            <p>Yes, there are several ways to report violations while protecting your identity:</p>
-            <br>
-            <h4>Anonymous Reporting Options</h4>
-            <ul>
-                <li><strong>311 App:</strong> Can be used anonymously for code violations</li>
-                <li><strong>NWACA:</strong> Can coordinate community response without revealing individuals</li>
-                <li><strong>Multiple neighbors:</strong> Group complaints protect individual identity</li>
-                <li><strong>City enforcement:</strong> Let government agencies be the enforcer, not you personally</li>
-            </ul>
-            <br>
-            <h4>Why Anonymity Matters</h4>
-            <p>Protecting your identity helps avoid:</p>
-            <ul>
-                <li>Retaliation or harassment from venue operators</li>
-                <li>Uncomfortable neighbor relationships</li>
-                <li>Being targeted on social media or review sites</li>
-                <li>Potential property damage or vandalism</li>
-            </ul>
-            
-            <div class="alert">
-                <strong>Strategy tip:</strong> Work through NWACA or coordinate with multiple neighbors. There's strength in numbers, and it's harder to retaliate against a group than an individual.
-            </div>
-            
-            <br>
-            
-            <h3 id="faq9">9. What if I'm worried about being labeled a "NIMBY" or "Karen"?</h3>
-            
-            <p>Standing up for your legal rights and quality of life doesn't make you unreasonable. Here's perspective on this concern:</p>
-            <br>
-            <h4>You're Protecting Legal Rights</h4>
-            <p>You're not opposing legitimate development or legal businesses. You're enforcing:</p>
-            <ul>
-                <li>Existing zoning laws designed to protect residential areas</li>
-                <li>Deed restrictions everyone agreed to when buying property</li>
-                <li>Noise ordinances that ensure peaceful enjoyment</li>
-                <li>Tax laws requiring businesses to pay their fair share</li>
-            </ul>
-            <br>
-            <h4>The Real Issue</h4>
-            <p>This isn't about stopping progress or being anti-business. It's about:</p>
-            <ul>
-                <li><strong>Appropriate location:</strong> Commercial businesses belong in commercial zones</li>
-                <li><strong>Following rules:</strong> Everyone else manages to follow zoning laws</li>
-                <li><strong>Protecting families:</strong> Children deserve safe, quiet neighborhoods</li>
-                <li><strong>Preserving investment:</strong> Your home is likely your largest asset</li>
-            </ul>
-            <br>
-            <h4>Response to Name-Calling</h4>
-            <p>If someone tries to dismiss your concerns with labels, remember:</p>
-            <ul>
-                <li>They're deflecting from their illegal activities</li>
-                <li>Name-calling doesn't change the law</li>
-                <li>You have broad community support</li>
-                <li>Courts consistently uphold residential protections</li>
-            </ul>
-            
-            <br>
-            
-            <h3 id="faq10">10. What happens if the city won't enforce the laws?</h3>
-            
-            <p>You have multiple escalation paths if initial enforcement efforts fail:</p>
-            <br>
-            <h4>Political Pressure</h4>
-            <ul>
-                <li><strong>City Council:</strong> Attend meetings, organize neighbors to speak</li>
-                <li><strong>Media attention:</strong> Local news often covers neighborhood quality issues</li>
-                <li><strong>Election accountability:</strong> Support candidates who enforce residential protections</li>
-            </ul>
-            <br>
-            <h4>Legal Action</h4>
-            <ul>
-                <li><strong>Deed restriction lawsuit:</strong> Private enforcement with attorney fee recovery</li>
-                <li><strong>Nuisance claims:</strong> Sue for damages and injunctive relief</li>
-                <li><strong>Mandamus action:</strong> Force city to enforce its own ordinances</li>
-            </ul>
-            <br>
-            <h4>Community Organization</h4>
-            <ul>
-                <li><strong>NWACA involvement:</strong> Leverage neighborhood association resources</li>
-                <li><strong>Petition drives:</strong> Demonstrate widespread community opposition</li>
-                <li><strong>Documentation campaign:</strong> Build overwhelming evidence file</li>
-            </ul>
-            
-            <div class="alert">
-                <strong>Remember:</strong> Persistence pays off. Cities often ignore single complaints but respond to sustained, organized community pressure. Document everything and don't give up.
-            </div>
-        </section>
+        </details>
         
-        <section id="contacts">
-            <h2>Who To Contact</h2>
-            
-            <p>Start with the two most important contacts below: <strong>Austin 311</strong> for a service request on every major disruptive event, and <strong>Eric Gardner</strong> for direct follow-up with similar details. The remaining contacts can still be useful, but they are generally secondary.</p>
+        <details id="contacts-details" class="collapsible-section">
+            <summary>Who To Contact</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> Eric Gardner comes first for the broad neighborhood impact. Austin 311 is then used on a per-event basis. Expand for the full contact list.
+                </div>
+            <p>Start with <strong>Eric Gardner</strong> if the residential event venue has been affecting your household over time. Then use <strong>Austin 311</strong> on a per-event basis and follow up with him. The remaining contacts can still be useful, but they are generally secondary.</p>
             
             <div class="contact-grid">
+                <div class="contact-card">
+                    <h4>Eric Gardner</h4>
+                    <div class="role">Austin Code Supervisor — Top Priority Follow-Up</div>
+                    <div class="contact-info">
+                        <strong>Email:</strong> <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a><br>
+                        <strong>Purpose:</strong> Send similar information as your 311 ticket, along with any supporting photos and the 311 service request number if available
+                    </div>
+                </div>
                 <div class="contact-card">
                     <h4>Austin 311</h4>
                     <div class="role">Top Priority for Event-by-Event Reporting</div>
@@ -1194,16 +1348,6 @@
                         <strong>Purpose:</strong> Submit a new land-use complaint for each major disruptive event using “Request Code Officer” → “Land Use Violation(s)” → “Running a Business out of a Residence”
                     </div>
                 </div>
-                
-                <div class="contact-card">
-                    <h4>Eric Gardner</h4>
-                    <div class="role">Austin Code Supervisor — Top Priority Follow-Up</div>
-                    <div class="contact-info">
-                        <strong>Email:</strong> <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a><br>
-                        <strong>Purpose:</strong> Send similar information as your 311 ticket, along with any supporting photos and the 311 service request number if available
-                    </div>
-                </div>
-                
                 <div class="contact-card">
                     <h4>NWACA (Northwest Austin Civic Association)</h4>
                     <div class="role">Neighborhood Advocacy & Deed Restriction Guidance</div>
@@ -1213,7 +1357,6 @@
                         <strong>Purpose:</strong> Community advocacy, neighborhood coordination, and deed restriction guidance
                     </div>
                 </div>
-                
                 <div class="contact-card">
                     <h4>Officer Andrew Kabbah</h4>
                     <div class="role">APD District Representative</div>
@@ -1223,7 +1366,6 @@
                         <strong>Purpose:</strong> Noise ordinance enforcement, community policing
                     </div>
                 </div>
-                
                 <div class="contact-card">
                     <h4>District 10 Council Member Marc Duchen</h4>
                     <div class="role">Local Representation & City Enforcement</div>
@@ -1232,7 +1374,6 @@
                         <strong>Purpose:</strong> Policy advocacy, city enforcement coordination
                     </div>
                 </div>
-                
                 <div class="contact-card">
                     <h4>Mayor Pro Tem Vanessa Fuentes</h4>
                     <div class="role">Leading Short-Term Rental Reforms</div>
@@ -1242,18 +1383,23 @@
                     </div>
                 </div>
             </div>
-        </section>
+            </div>
+        </details>
         
-        <section id="action">
-            <h2>Take Action</h2>
-            
+        <details class="collapsible-section">
+            <summary>Additional Action Guidance</summary>
+            <div class="collapsible-content">
+                <div class="section-intro">
+                    <strong>In short:</strong> The essential first steps are already shown at the top of the page. Expand this section if you want more detailed action guidance and sample language.
+                </div>
             <div class="priority-box">
-                <h3>Start Here First</h3>
+                <h3>Action Order</h3>
                 <ol>
-                    <li>Submit an Austin 311 service request for every major disruptive event.</li>
-                    <li>Email Eric Gardner at <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> with similar details and supporting photos.</li>
+                    <li>Contact Eric Gardner first if the event venue has been affecting your household over time.</li>
+                    <li>For each major disruptive event, file an Austin 311 service request.</li>
+                    <li>Follow up with Eric Gardner and include the 311 service request number if available.</li>
                 </ol>
-                <p>These should usually be your first two actions. Additional outreach to neighborhood groups, police, or elected officials can still help, but they are secondary to building a consistent reporting record.</p>
+                <p>Additional outreach to neighborhood groups, police, or elected officials can still help, but these are the core reporting steps.</p>
             </div>
             
             <h3>Immediate Steps You Can Take</h3>
@@ -1264,10 +1410,11 @@
             
             <h4>1. File Official Complaints</h4>
             <ol>
-                <li><strong>Open a 311 ticket:</strong> Use <a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Austin’s service request form</a> and select “Request Code Officer” → “Land Use Violation(s)” → “Running a Business out of a Residence.”</li>
+                <li><strong>Contact Eric Gardner first:</strong> Email <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a> if the property has shown a pattern of event venue business that has affected your household or neighborhood over time.</li>
+                <li><strong>Open a 311 ticket for each major event:</strong> Use <a href="https://austin-cwiprod.motorolasolutions.com/cwi/select" target="_blank">Austin’s service request form</a> and select “Request Code Officer” → “Land Use Violation(s)” → “Running a Business out of a Residence.”</li>
                 <li><strong>Describe the activity as an event venue business:</strong> Include concerns about noise, traffic, parking, scale, and safety. Avoid STR-style wording such as “rental” so the complaint stays focused on land use.</li>
                 <li><strong>Upload photos:</strong> Add any supporting images that show traffic, parking, crowd size, event equipment, or other impacts.</li>
-                <li><strong>Email Eric Gardner:</strong> Send the same core information to <a href="mailto:eric.gardner@austintexas.gov">eric.gardner@austintexas.gov</a>, along with the 311 service request number if available.</li>
+                <li><strong>Follow up with Eric Gardner:</strong> Send the same core information after the event and include the 311 service request number if available.</li>
             </ol>
             
             <br>
@@ -1307,7 +1454,7 @@
                 
                 Dear Council Member Duchen,<br><br>
                 
-                I am writing as your constituent in Northwest Hills regarding what appears to be an illegal commercial event venue operating at [PROPERTY ADDRESS]. I have submitted an Austin 311 service request and also reported the matter to Austin Code Supervisor Eric Gardner. This residential property appears to be operating in violation of multiple city ordinances while undermining the quiet, family-friendly character of our neighborhood.<br><br>
+                I am writing as your constituent in Northwest Hills regarding what appears to be an illegal commercial event venue operating at [PROPERTY ADDRESS]. I have reported the matter to Austin Code Supervisor Eric Gardner because this activity has been affecting my household and neighborhood over time, and I have also used Austin 311 to document major disruptive events. This residential property appears to be operating in violation of multiple city ordinances while undermining the quiet, family-friendly character of our neighborhood.<br><br>
                 
                 <strong>The violations are clear and documented:</strong><br>
                 • Land-use violation - operating an event venue business from a residence<br>
@@ -1333,7 +1480,8 @@
             <div class="alert">
                 <strong>Stay Safe:</strong> Use official channels rather than direct confrontation. Document everything and work through proper enforcement mechanisms.
             </div>
-        </section>
+            </div>
+        </details>
         
         <section>
             <h2>Contact Us</h2>
@@ -1353,10 +1501,33 @@
         </section>
     </main>
     
+</main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.querySelector('.mobile-nav-toggle');
+            const navList = document.getElementById('primary-nav');
+
+            if (toggleButton && navList) {
+                toggleButton.addEventListener('click', function () {
+                    const isOpen = navList.classList.toggle('nav-open');
+                    toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+
+                navList.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (window.innerWidth <= 768) {
+                            navList.classList.remove('nav-open');
+                            toggleButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
     <footer>
         <div class="container">
             <p>By Residents of Northwest Hills, Austin, TX - Know Your Rights - Protect Our Communities</p>
-            <p>Resources: <a href="other-neighborhoods.html" style="color: #ccc;">Austin City-Wide Guide</a> | <a href="#reporting" style="color: #ccc;">Top Reporting Steps</a> | <a href="#contacts" style="color: #ccc;">Enforcement Contacts</a> | <a href="#action" style="color: #ccc;">Take Action</a></p>
+            <p>Resources: <a href="#quick-start" style="color: #ccc;">Start Here</a> | <a href="#problem-details" style="color: #ccc;">The Problem</a> | <a href="#legal-background" style="color: #ccc;">Legal Background</a> | <a href="#contacts-details" style="color: #ccc;">Contacts</a> | <a href="other-neighborhoods.html" style="color: #ccc;">Austin City-Wide Guide</a></p>
             <p>For educational purposes. Not legal advice. Consult attorneys for legal guidance.</p>
         </div>
     </footer>
